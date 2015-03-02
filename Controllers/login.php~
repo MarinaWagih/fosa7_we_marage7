@@ -1,0 +1,12 @@
+<?php
+	include_once('../Models/User.php');
+	if(isset($_POST))
+	{
+		$currUser = new User();
+
+		
+	}
+
+
+
+?>

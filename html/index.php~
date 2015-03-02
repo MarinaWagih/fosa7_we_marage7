@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Login</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+<div id="Container">
+	<section class="loginform cf">
+		<form name="login"  method="post" accept-charset="utf-8">
+			<ul>
+				<li>
+					<label for="usermail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<input type="email" id="usermail" name="usermail" placeholder="yourname@email.com" required>
+				</li>
+				<li>
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password" placeholder="password" required></li>
+				<li>
+					<input id="login" type="submit" value="Login">
+				</li>
+			</ul>
+		</form>
+		<div id="myDiv"></div>
+	</section>
+</div>	
+</body>
+</html>

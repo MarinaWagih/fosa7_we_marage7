@@ -1,0 +1,29 @@
+window.onload = function(){
+	alert();
+	var login = getElementById("login");
+	login.onclick = function()
+	{
+		var usermail = getElementById("usermail");
+		var password = getElementById("password");
+
+		if (window.XMLHttpRequest)
+  		{
+			xmlhttp=new XMLHttpRequest();
+  		}
+		else
+  		{
+  			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  		}
+		xmlhttp.open("POST",".php",true);
+		xmlhttp.send("email="+usermail+"&password="+password);
+
+
+		xmlhttp.onreadystatechange=function()
+  		{
+  			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    			{
+    				document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    			}
+  		}
+	}
+}
