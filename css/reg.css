@@ -1,0 +1,220 @@
+@-webkit-keyframes ViewMenuAnimation
+{
+	0%
+	{
+		transform: translateX(0px);
+	}
+	25%
+	{
+		transform: translateX(70px);
+	}
+	50%
+	{
+		transform: translateX(0px);
+	}
+	75%
+	{
+		transform: translateX(-50px);
+	}
+	100%
+	{
+		transform: translateX(0px);
+	}
+}
+@-moz-keyframes ViewMenuAnimation
+{
+	0%
+	{
+		transform: translateX(0px);
+	}
+	25%
+	{
+		transform: translateX(70px);
+	}
+	50%
+	{
+		transform: translateX(0px);
+	}
+	75%
+	{
+		transform: translateX(-50px);
+	}
+	100%
+	{
+		transform: translateX(0px);
+	}
+}
+#Login img
+{
+	-webkit-animation-name:ViewMenuAnimation;
+	-webkit-animation-duration:6s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:normal;
+	-webkit-animation-delay:1s;
+	/*transform-origin:50% 50%;*/
+    -moz-transition:all 1s ease-in-out;
+    -moz-animation-name:ViewMenuAnimation;
+	-moz-animation-duration:6s;
+	-moz-animation-iteration-count:infinite;
+	-moz-animation-direction:normal;
+	-moz-animation-delay:1s;
+	/*transform-origin:50% 50%;*/
+    -moz-transition:all 1s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+#Login img
+{
+	margin: 0% 5% 5% 15%;
+    margin-left: 15%;
+}
+body {
+    height: 100%; 
+	background-image: url("../img/restaurant-during-the-day.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-color:#2F5168;
+	position: absolute;
+	width: 100%;
+}
+label {
+	display: block;
+	color: #1E2736;
+	float: left;
+    padding: 5px;
+    font-weight: 600;
+	font-family: serif;
+	font-size: larger;
+}
+/*.cf:before,
+.cf:after {
+    content: ""; 
+    display: table;
+    margin-top: inherit;
+}*/
+
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+:focus {
+/*	outline: 0;
+*/	border-color: #5F6E88;
+}
+.loginform {
+	width: 470px;
+	margin: 2% auto;
+	padding: 25px;
+	background-color: rgba(250,250,250,0.8);
+	border-radius: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
+    			inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 10%;
+}
+.loginform ul {
+	margin-left: 5%;
+}
+.loginform li {
+	display: block;
+	width: 100%;
+	margin-bottom: 15px;
+	margin-left: auto;
+}
+.loginform li:last-child
+{
+   text-align: center;
+   width: 80%;
+   margin-left: 0;
+}
+.loginform input:not([type=submit]) {
+	padding: 5px;
+	margin-right: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 
+				0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
+}
+.loginform input[type=submit] {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #64c8ef; /* Old browsers */
+	background: -moz-linear-gradient(top,  #5F6E88 0%,#1E2736 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#64c8ef), color-stop(100%,#00a2e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #5F6E88 0%,#1E2736 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #5F6E88 0%,#1E2736 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #5F6E88 0%,#1E2736 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64c8ef', endColorstr='#00a2e2',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	padding: 5px 15px;
+	margin-right: 0;
+	margin-top: 15px;
+	border-radius: 3px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	margin-left: 30px;
+	font-size: large;
+}
+.loginform input[type=submit]:hover
+{
+    transform:rotate(360deg);
+    -webkit-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+#Header img
+{
+	margin-left: 37%;
+    margin-top: 2;
+}
+#Header
+{
+	height: 65px;
+	background: linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.5) );
+	background: -moz-linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.8) );	
+	background: -webkit-linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.8) );		
+	margin: -8px;
+    padding-left: 10;
+    padding-top: 1px;
+}
+#Header p
+{
+	display: inline;
+	margin-left: 15px;	
+	font-size: -webkit-xxx-large;
+	font-size: -moz-xxx-large;
+	font-size: 50;	
+	color:rgb(43, 54, 71);
+	margin-bottom: 0px;
+	margin-top: 10px;
+
+}
+#Header a:nth-child(1)
+{
+	position: :relative;
+	left:0;
+}
+#Header a
+{
+	position: relative;
+	/*left: 7%;*/
+	top: -10px;
+	background: linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); 
+	background: -moz-linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); 	
+	text-decoration: none;
+	color: rgb(250,250,250);
+	line-height: 40px;
+	padding: 15px;
+	font-size: larger;
+	font-weight: 600;
+	font-family: serif;
+	border-radius: 5px;
+	margin-left: 15px;
+}
+#Header a:hover
+{
+/*	transform:rotate(360deg);
+    -webkit-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;*/
+	background: linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
+	background: -moz-linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
+}
