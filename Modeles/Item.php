@@ -98,7 +98,11 @@ class Item{
 
              $result= $this->TestObj->select("ASSOCIATIVE","Item",$TargetColumn,False,$whereColumn,$whereValue,'=');
              $Category= new Category();
-             $result[0]['CategoryId']=$Category->selectOneCategory("*","id",$result[0]['CategoryId']);
+             for ($i=0; $i <count($result) ; $i++) { 
+               # code...
+               $result[$i]['CategoryId']=$Category->selectOneCategory("*","id",$result[$i]['CategoryId']);
+             }
+            
              return $result;
         }
         else

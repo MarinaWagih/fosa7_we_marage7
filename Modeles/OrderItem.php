@@ -13,7 +13,7 @@
  */
 include_once('MySQLiQuery.php');
 include_once('Item.php');
-class ItemOrder 
+class OrderItem 
 {
     function __construct()
     {
