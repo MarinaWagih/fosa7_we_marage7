@@ -22,8 +22,8 @@ class Item{
     protected  $TestObj;
     
     public function __construct() {
-      $this->TestObj = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
-
+     // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->TestObj = MySQLiQuery::getObject('127.0.0.1','root','bobosa','phpdb');
     }
 
     /*
@@ -59,13 +59,26 @@ class Item{
             return "Database connection Error";
         }
     }
-    public function deleteItem($data)
+    // public function deleteItem($data)
+    // {
+    //    if (isset($this->TestObj))
+    //     {
+
+    //         return   $this->TestObj->delete("Item","id",$data['id'],"=");
+           
+    //     }
+    //     else
+    //     {
+    //         return "Database connection Error";
+    //     }
+    // }
+     public function deleteItem($whereColumn,$whereValue)
     {
        if (isset($this->TestObj))
         {
 
-            return   $this->TestObj->delete("Item","id",$data['id'],"=");
-           
+            //return   $this->TestObj->delete("Item","id",$data['id'],"=");
+            return   $this->TestObj->delete("Item",$whereColumn,$whereValue,'=');
         }
         else
         {

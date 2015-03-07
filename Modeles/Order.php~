@@ -23,7 +23,7 @@ class Order
     function __construct()
     {
        // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
-        $this->db= MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
+        $this->db= MySQLiQuery::getObject('127.0.0.1','root','bobosa','phpdb');
 
     }
     
