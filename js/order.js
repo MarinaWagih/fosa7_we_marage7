@@ -8,6 +8,7 @@ $(document).ready(function () {
   function IncTotal()
   {
     var totalOfTotal=0;
+    console.log("inc in total"+inc);
     for (var i = 0; i < inc; i++) 
     {
        totalOfTotal+= Quantity[i]*Price[i];   
@@ -15,7 +16,17 @@ $(document).ready(function () {
       $("#Total").html("Total=<br>"+totalOfTotal);
   }
        //alert("hhh");
-       //****************************LASTORDER*************************************
+       if($("#UserType").val()=="admin")
+       {
+        $.post("../Controllers/returnallusers.php",
+        function (data) {
+                       
+                                         
+                      });
+       }
+       else
+       {
+         //****************************LASTORDER*************************************
         $.post("../Controllers/lastorder.php",
         function (data) {
 
@@ -34,6 +45,8 @@ $(document).ready(function () {
                        
                                          
             });
+       }
+      
         //**********************************************************************************
         //*****************************AllItems*********************************************
         $.post("../Controllers/allitems.php",
@@ -93,8 +106,12 @@ $(document).ready(function () {
                                                                         Price.splice(getid[1],1);
                                                                         OrderItem.splice(getid[1],1);
                                                                         console.log(getid[1]);
-                                                                        console.log($(".new"+getid[1]).children());
+                                                                       // console.log($(".new"+getid[1]));
+                                                                        $('#AllItems').append($(".new"+getid[1]));
+                                                                         $("#Addeditem"+getid[1]).remove();
+                                                                         inc--;
                                                                          IncTotal();
+
                                                                       });
                                           
                                            inc++;

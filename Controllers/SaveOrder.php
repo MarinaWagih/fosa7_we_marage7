@@ -6,6 +6,7 @@
 
 		$order=new Order();
 		$itms=new OrderItem();
+		$Savedataflag=false;
 		session_start();
 		$orderId=$order->selectOneOrder("Max(`id`),`status`" , 'UserId' ,$_POST['userid'] );
 		if ($orderId[0]['status']!="processing")
@@ -43,5 +44,9 @@
 		}
 		var_dump($result);
 
+	}
+	else 
+	{
+		echo "invalid data or you're not loged";
 	}
 ?>
