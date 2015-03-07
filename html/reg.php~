@@ -24,16 +24,20 @@
 					<ul>					
 						<li>
 							<label for="Name">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-							<input type="Name" name="Name" placeholder="Name" required></li>
+							<input type="Name" id="name" name="Name" placeholder="Name" required></li>
 						<li>
 							<label for="E-mail">E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-							<input type="E-mail" name="E-mail" placeholder="E-mail" required></li>
+							<input type="email" id="E-mail" name="E-mail" placeholder="E-mail" required>
+							<span id="spanemail" ></span>
+							</li>
 						<li>
 							<label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-							<input type="password" name="password" placeholder="password" required></li>
+							<input type="password" id="password" name="password" placeholder="password" required></li>
 						<li>
 							<label for="confirmpassword">Confirm Password:</label>
-							<input type="password" name="confirmpassword" placeholder="confirmpassword" required></li>
+							<input type="password" id="conpass" name="confirmpassword" placeholder="confirmpassword" required>
+							<span id="spanpass" ></span>
+							</li>
 						<li>
 							<label for="RoomNo">Room No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							<select  name="RoomNo" id="RoomNo" required>

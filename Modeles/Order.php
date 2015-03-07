@@ -13,7 +13,7 @@
 include_once('MySQLiQuery.php');
 include_once('User.php');
 include_once('Room.php');
-include_once('Item.php');
+include_once('OrderItem.php');
 class Order
 {
  
@@ -51,13 +51,27 @@ class Order
             $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',$TargetColumn,False,$whereColumn,$whereValue,'=');
             $user=new user();
             $room=new Room();
-            $item=new Item();
+            $item=new OrderItem();
             for ($i=0; $i < count($result) ; $i++) 
             { 
-               $result[$i]["UserId"]=$usr->selectOneUser("*","id",$result[$i]["UserId"]);
+               $result[$i]["UserId"]=$user->selectOneUser("*","id",$result[$i]["UserId"]);
                $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
                $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
             }
+            
+            return $result;
+        }
+       else
+        {
+             return "failed to connect to Database"."<br/>";
+        }
+    }
+    
+    function selectSpecOrders($TargetColumn,$whereColumn,$whereValue)
+    {
+       if($this->db)
+        {
+            $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',$TargetColumn,False,$whereColumn,$whereValue,'R_GREATER');
             
             return $result;
         }

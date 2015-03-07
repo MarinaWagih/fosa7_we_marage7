@@ -66,15 +66,26 @@ class User{
           	   
                 $result=$this->dbconn->select('ASSOCIATIVE','User',$TargetColumn,False,$whereColumn,$whereValue,'=');
                 $Room=new Room();
-                $result[0]['RoomId']=$Room->selectOneRoom("*","id",$result[0]['RoomId']);
+                if(isset($result[0]['RoomId']))
+                	$result[0]['RoomId']=$Room->selectOneRoom("*","id",$result[0]['RoomId']);
                 return $result;                                           
             }else{
            	    
             }	
 	
 		}
+		
+		public function selectSpecUsers($TargetColumn,$whereColumn,$whereValue){
 
-
+			if($this->dbconn){
+          	   
+                $result=$this->dbconn->select('ASSOCIATIVE','User',$TargetColumn,False,$whereColumn,$whereValue,'=');
+               
+                return $result;                                           
+            
+	
+		}
+}
 		public function selectUsers(){
 
 			if($this->dbconn){
