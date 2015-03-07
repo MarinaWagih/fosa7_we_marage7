@@ -25,7 +25,7 @@
 			$result = $usr->insertUser([$_POST["Name"],$_POST["E-mail"],$_POST["password"],$_POST["RoomNo"],$_POST["Ext"],$res[1],"user"]);
 			else
 				echo $res[0].": ".$res[1];
-			var_dump($result);
+			header('Location: ../html/users.php');
 		}
 		else
 		{
