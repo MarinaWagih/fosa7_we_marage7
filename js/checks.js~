@@ -16,19 +16,38 @@ $(document).ready(function ()
 	   	
 	   	);
 	   	
-	  $("#from").blur(function(){
-   		if($('#from').val()!="")
-   		{
-		    $.post("../Controllers/returnallorders.php",{"user":$("#usr").val() ,"from":$(this).val() , "to":$("#to").val()},
-		    
-		    function(data)
-		    {
-		    	
-		    	$("#mydiv").html(data);
-		    }
-		    );
-   		}
-    }); 	
+	   	function connect()
+	   	{
+	   		var fr = $("#from").val();
+	   		var to = $("#to").val();
+	   		
+	   		if(fr==null)
+	   			fr="";
+	   		if(to==null)
+	   			to="";
+	   		
+	   		
+				$.post("../Controllers/returnallorders.php",{"user":$("#usr").val() ,"from":fr , "to":to},
+				
+				function(data)
+				{
+					
+					$("#mydiv").html(data);
+				}
+				);
+	   		
+    	}
+	   	
+	   	
+	   	
+    	
+    	
+	  $("#from").blur(connect);
+	  $("#to").blur(connect);
+	  
+	  
+
+    	
 	
 	   	
    	

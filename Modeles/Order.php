@@ -23,10 +23,6 @@ class Order
     function __construct()
     {
 
-       // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
-       // $this->db= MySQLiQuery::getObject('127.0.0.1','root','anawany','phpdb');
-
-
 
          $configs = include('Conf.php');
         $this->db=MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
@@ -88,11 +84,11 @@ class Order
         }
     }
     
-    function selectSpecOrders($TargetColumn,$whereColumn,$whereValue)
+    function selectSpecOrders($targetColumn , $highPriority , $whereColumn , $whereValue , $relationalOperator, $logicalOperator)
     {
        if($this->db)
         {
-            $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',$TargetColumn,False,$whereColumn,$whereValue,'R_GREATER');
+            $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',$targetColumn,False,$whereColumn,$whereValue,$relationalOperator, $logicalOperator);
             
             return $result;
         }
