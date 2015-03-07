@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	$(function () 
+
+if($("#UserType").val()=="admin"){
+        $(function () 
   {
     
     $.ajax({                                      
@@ -94,4 +96,14 @@ $(document).ready(function(){
       });
     });
 
-});
+
+     
+
+    }else{
+
+      window.location.replace('../html/Error.php');
+
+    }
+
+
+    });

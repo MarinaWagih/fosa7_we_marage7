@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
-					//////////////GET paramters from the link /////////////////
+					
+if($("#UserType").val()=="admin"){
 
+				//////////////GET paramters from the link ////////////////
 
-	var parameter = window.location.search.replace( "?", "" ); // will return the GET parameter 
+     			var parameter = window.location.search.replace( "?", "" ); // will return the GET parameter 
 	var values = parameter.split("=");
 	 // will return and array as ["name", "sample"] 
 	 if(values[1]!==null){
@@ -21,7 +23,9 @@ $(document).ready(function(){
             		var arr = data.split(':');
             		$('#name').val(arr[1]);
 	 				
-	 				$('#price').val(arr[2]);		
+	 				$('#price').val(arr[2]);	
+
+	 				$('#userid').val(arr[0]);	
 
 
 
@@ -51,37 +55,9 @@ $(document).ready(function(){
 
 
 
-            			////////////////////  submit product ////////
+            			////////////////////  submit product //////////////
 		
-		$('#submit').click(function(){
-
-			// $mydata=$('#name').val()+':'+$('#price').val()+":"+$('#category').val()+':'+$('#pic').val();
-			
-			alert(arr[0]);
 		
-			$.ajax({
-
-			url:'../Controllers/updateproduct.php?name='+$('#name').val()+'&price='+$('#price').val()+'&category='+$('#category').val()+'&pic='+$('#pic').val()+'&id='+values[1],
-			data:'',
-			dataType:'text',
-			success:function(sata){
-
-				window.location.replace('../html/products.php');
-			}
-
-
-
-
-		});		
-
-
-
-		});
-
-
-
-
-
 
 	 			},
 	 			
@@ -89,11 +65,12 @@ $(document).ready(function(){
 		});
 	
 		
-		
-		
 
+    }else{
 
+      window.location.replace('../html/Error.php');
 
+    }
 
 
 
