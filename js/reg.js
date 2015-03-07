@@ -97,7 +97,8 @@ $(document).ready(function ()
     	}
     	else
     	{
-		    	ext = '1';
+    		$('#spanExt').html("");
+		    ext = '1';
     	}
     }
     
