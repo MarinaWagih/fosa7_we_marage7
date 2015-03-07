@@ -6,7 +6,10 @@ class Room{
 	function __construct() {
 								
 		//$this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
-      $this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
+      //$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
+       $configs = include('Conf.php');
+        $this->dbconn=MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
+    
         }
 
 	public function insertRoom($data){
