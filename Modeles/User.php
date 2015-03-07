@@ -13,8 +13,10 @@ class User{
 			protected $dbconn;
       //protected 
 	function __construct() {
+
 					$configs = include('Conf.php');			
 		$this->dbconn = MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
+
         }
 
 	public function insertUser($data){

@@ -1,11 +1,3 @@
-/*
-* upload image from user or item to server
-*@author Bishoy.MGFS
-*/
-
-
-
-
 <?php
 	class Img
 	{
