@@ -31,7 +31,7 @@ class Item{
     /*
     * Take associative Array 
     */
-    public function insetItem($data)
+    public function insertItem($data)
     {
      if (isset($this->TestObj))
         {

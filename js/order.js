@@ -63,7 +63,7 @@ $(document).ready(function () {
                                           //alert($(this).children().length);
                                           var itemprice=$(this).children()[3].innerHTML;
                                           Price.push(parseFloat(itemprice));
-                                          $(this).removeClass("item").addClass("new");
+                                          $(this).removeClass("item").addClass("new"+inc);
                                           //alert(inc);
                                           $("#SelectedItems").append("<div id='Addeditem"+inc+"'></div")
                                           var x=$(this).children().length;
@@ -73,7 +73,7 @@ $(document).ready(function () {
                                           $("#Addeditem"+inc)
                                           .append("<span class='tota' id='total"+inc+"'>"+itemprice+"</span> ");
                                           $("#Addeditem"+inc)
-                                          .append("<span class='x' id='deletex"+inc+"'>"+x+"</span> ");
+                                          .append("<span class='x' id='deletex"+inc+"'>"+"x"+"</span> ");
                                           $(this).off("click");
                                           
                                           $('#price'+inc).change(function(){
@@ -88,7 +88,13 @@ $(document).ready(function () {
                                                                             });
                                           $("#deletex"+inc).click(function ()
                                                                       {
-                                                                        
+                                                                        var getid=this.id.split("x");
+                                                                        Quantity.splice(getid[1],1);
+                                                                        Price.splice(getid[1],1);
+                                                                        OrderItem.splice(getid[1],1);
+                                                                        console.log(getid[1]);
+                                                                        console.log($(".new"+getid[1]).children());
+                                                                         IncTotal();
                                                                       });
                                           
                                            inc++;
