@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
 
-	
- 						/////////////////// drop box Contents /////////////////
+
+if($("#UserType").val()=="admin"){
+
+     						/////////////////// drop box Contents /////////////////
 		
 		$.ajax({
 			url:'../Controllers/myCat.php',
@@ -50,12 +52,12 @@ $(document).ready(function(){
 	
 		
 		
-		
+
+    }else{
+
+      window.location.replace('../html/Error.php');
+
+    }
 
 
-
-
-
-
-
-});
+    });

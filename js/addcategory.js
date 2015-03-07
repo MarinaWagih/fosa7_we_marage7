@@ -1,6 +1,9 @@
 $(document).ready(function(){
 	
-	$('#submit').click(function(){
+
+if($("#UserType").val()=="admin"){
+
+     $('#submit').click(function(){
 
 								$.ajax({
 
@@ -16,35 +19,14 @@ $(document).ready(function(){
 								});
 	
 
-
-
-
-
 	});
 
 
+    }else{
 
+      window.location.replace('../html/Error.php');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 });

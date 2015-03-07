@@ -3,7 +3,9 @@ $(document).ready(function(){
 	// $(function () 
  //  {
     
-    $.ajax({                                      
+  if($("#UserType").val()=="admin"){
+
+      $.ajax({                                      
       url: '../Controllers/users.php',           
       data: "",                        
       dataType: 'json',                      
@@ -58,6 +60,14 @@ $(document).ready(function(){
       });
     // });
 
+    
+
+
+    }else{
+
+      window.location.replace('../html/Error.php');
+
+    }
 
 
 

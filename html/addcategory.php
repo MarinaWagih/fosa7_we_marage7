@@ -41,5 +41,8 @@
 	</table>
 </center>
 </form>
+<?php session_start();?>
+<input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId']?>">
+<input type="hidden" id="UserType" value="<?php echo $_SESSION['Type']?>">
 </body>
 </html>
