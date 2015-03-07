@@ -10,11 +10,11 @@
   		<div>
   			<label> Notes: </label>
   			<textarea id="Notes"></textarea><br>
-  			<select id="Room">
+  			<select id="RoomNo">
   				
   			</select><br>
 
-  			<span>________________________</span>
+  			<span>_______________________</span><br>
             <span id="Total"></span><br>
             <input type="button" id ="Confirm" value="Confirm">
   		</div>
@@ -24,7 +24,8 @@
 	--------------------------------------
 	<div id="AllItems"></div>
 	---------------------------------------
-	
-
+	<?php session_start();?>
+  <input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId']?>">
+  <input type="hidden" id="UserType" value="<?php echo $_SESSION['Type']?>">
 </body>
 </html>

@@ -13,7 +13,7 @@ class User{
 
 	function __construct() {
 								
-				$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','bobosa','phpdb');
+		$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
         }
 
 	public function insertUser($data){
@@ -62,15 +62,17 @@ class User{
 
 		public function selectOneUser($TargetColumn,$whereColumn,$whereValue){
 
-			if($this->dbconn){
+			if($this->dbconn)
+      {
           	   
-                $result=$this->dbconn->select('ASSOCIATIVE','User',$TargetColumn,False,$whereColumn,$whereValue,'=');
-                $Room=new Room();
-                $result[0]['RoomId']=$Room->selectOneRoom("*","id",$result[0]['RoomId']);
-                return $result;                                           
-            }else{
-           	    
-            }	
+        $result=$this->dbconn->select('ASSOCIATIVE','User',$TargetColumn,False,$whereColumn,$whereValue,'=');
+        if(isset($result[0]['RoomId']))
+        {   
+           $Room=new Room();
+           $result[0]['RoomId']=$Room->selectOneRoom("*","id",$result[0]['RoomId']);
+        }
+        return $result;                                           
+      }	
 	
 		}
 

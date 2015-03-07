@@ -21,7 +21,11 @@ class Category {
     protected  $TestObj;
     
     public function __construct() {
-      $this->TestObj = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
+ 	//$GLOBALS["host"]="127.0.0.1";
+
+$GLOBALS["pass"]="0000000mrmr";
+$GLOBALS["DB"]="phpdb";
+      $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],"phpdb");
 
     }
 

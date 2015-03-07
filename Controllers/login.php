@@ -14,6 +14,7 @@
       	
       	session_start();
       	$_SESSION['UserId']=$result[0]['id'];
+        $_SESSION['Type']=$result[0]['type'];
       	echo "Done";
       }
       else

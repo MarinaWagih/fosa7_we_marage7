@@ -21,8 +21,9 @@ class Category {
     protected  $TestObj;
     
     public function __construct() {
-      $this->TestObj = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
 
+      //$this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->TestObj = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
     }
 
     /*
@@ -100,6 +101,20 @@ class Category {
         {
 
              return   $this->TestObj->select("ASSOCIATIVE","Category",$TargetColumn,False,$whereColumn,$whereValue,'=');
+        }
+        else
+        {
+            return "Database connection Error";
+        }
+    }
+     public function selectAllCategoryBy($TargetColumn)
+    {
+        # code...
+        if (isset($this->TestObj))
+        {
+
+                $result=$this->TestObj->select("ASSOCIATIVE","Category",$TargetColumn);
+                return $result;
         }
         else
         {

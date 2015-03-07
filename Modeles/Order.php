@@ -14,13 +14,15 @@ include_once('MySQLiQuery.php');
 include_once('User.php');
 include_once('Room.php');
 include_once('OrderItem.php');
+
 class Order
 {
  
+     protected $db;
     function __construct()
     {
-        $this->db = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
-
+       // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->db= MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
 
     }
     
@@ -28,8 +30,8 @@ class Order
     {
         if($this->db)
         {
-            $date = new DateTime();
-            $date=$date->getTimestamp();
+            $date = date("Y-m-d H:i:s"); ;
+            //$date=$date->getTimestamp();
             $insert = $this->db->insert("Order", array("UserId" , "isPaid" ,"status","notes" ,"RoomId","totalBill" 
                     ,"timeStamp")
                 , array($data['UserId'] ,$data['isPaid'] ,  $data['status'], $data['notes'],$data['RoomId']
