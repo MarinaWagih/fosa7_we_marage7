@@ -1,8 +1,3 @@
-/*
-* upload image from user or item to server
-*@author Bishoy.MGFS
-*/
-
 
 
 
@@ -43,7 +38,9 @@
 						$flag=false;
 						break;
 				}
+				echo $ImgError;
 				return "Error:".$ImgError;
+
 			}
 			else
 			{
