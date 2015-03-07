@@ -18,7 +18,7 @@
 				<label>Product:</label>	
 			</td>
 			<td>
-				<input type="text" id='name' name="name"></input><input type='text' name='id' id='userid' hidden></input>
+				<input type="text" id='name' name="name"></input><input type='text' name='id' id='zzz' ></input>
 			</td>
 		</tr>
 		<tr>
