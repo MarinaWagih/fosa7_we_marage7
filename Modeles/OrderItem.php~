@@ -17,9 +17,10 @@ class OrderItem
 {
     function __construct()
     {
-        $this->db = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
+ 
 
-
+        $configs = include('Conf.php');
+        $this->db =MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
     }
     
     function insertItemOrder($data)
@@ -28,7 +29,7 @@ class OrderItem
         if($this->db)
         {
         return $insert = $this->db->insert("ItemOrder", array("OrderId" , "ItemId" ,"quantity"),  
-        	array($data['OrderId'] ,$data['ItemId'] ,  $data['status'],  $data['quantity'] ));
+        	array($data['OrderId'] ,$data['ItemId'] ,$data['quantity'] ));
         }
         else
         {
@@ -42,11 +43,7 @@ class OrderItem
     	if($this->db)
         {
 
-<<<<<<< HEAD
-        	$result=  $this->db->select('ASSOCIATIVE','phpdb.ItemOrder',$TargetColumn,False,$whereColumn,$whereValue,'=',"BW_AND");
-=======
         	$result=  $this->db->select('ASSOCIATIVE','phpdb.ItemOrder',$TargetColumn,False,$whereColumn,$whereValue,'=');
->>>>>>> 0b72d7802fd356515e6de1850a424ac843064582
                 $Item=new Item();
 	        for ($i=0; $i < count($result); $i++) 
 	        { 
@@ -99,7 +96,7 @@ class OrderItem
     {
        if($this->db)
         {
-	        $result=$this->db->update('phpdb.ItemOrder',$targetColumns,$newValues,$whereColumn,$whereValue);
+	        $result=$this->db->update('phpdb.ItemOrder',$targetColumns,$newValues,$whereColumn,$whereValue,'=','AND');
 	        
 	        return $result;
 	     }

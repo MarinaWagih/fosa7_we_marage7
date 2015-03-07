@@ -7,13 +7,18 @@
  */
 require_once('MySQLiQuery.php');
 require_once('Room.php');
+
 class User{
 		
 			protected $dbconn;
-
+      //protected 
 	function __construct() {
+
 								
-		$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','anawany','phpdb');
+//		$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','anawany','phpdb');
+					$configs = include('Conf.php');			
+		$this->dbconn = MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
+
         }
 
 	public function insertUser($data){

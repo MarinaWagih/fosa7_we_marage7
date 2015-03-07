@@ -6,18 +6,32 @@
 	$usr = new User();
 	$img = new Img();
 	
+	
+	$flag ="0";
+	$name =$pass=$conpass=$email=$ext=$pp="";
+	
+	
 	if(!empty($_POST))
 	{
-		$res = $img->upload('user',$_FILES["ProfilePicture"]);
+		
+		if(!empty($_POST['Name']) && !empty($_POST['E-mail'])  && !empty($_POST['confirmpassword']) && !empty($_POST['password']) && ($_POST['password']=== $_POST['confirmpassword']) && !empty($_POST['Ext']) && !empty($_FILES["ProfilePicture"]))
+		{
+			$res = $img->upload('user',$_FILES["ProfilePicture"]);
 		
 		
-		$res = explode(':',$res);
+			$res = explode(':',$res);
 		
-		if($res[0]=="success")
-		$result = $usr->insertUser([$_POST["Name"],$_POST["E-mail"],$_POST["password"],$_POST["RoomNo"],$_POST["Ext"],$res[1],"user"]);
+			if($res[0]=="success")
+			$result = $usr->insertUser([$_POST["Name"],$_POST["E-mail"],$_POST["password"],$_POST["RoomNo"],$_POST["Ext"],$res[1],"user"]);
+			else
+				echo $res[0].": ".$res[1];
+			var_dump($result);
+		}
 		else
-			echo $res[0].": ".$res[1];
-		var_dump($result);
+		{
+			header('Location: ../html/reg.php');		
+		}
+		
 	}
 
 
