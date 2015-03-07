@@ -14,6 +14,8 @@ class User{
       //protected 
 	function __construct() {
 
+								
+//		$this->dbconn = MySQLiQuery::getObject('127.0.0.1','root','anawany','phpdb');
 					$configs = include('Conf.php');			
 		$this->dbconn = MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);
 

@@ -1,3 +1,4 @@
+
 <?php
 	class Img
 	{
@@ -35,7 +36,9 @@
 						$flag=false;
 						break;
 				}
+				echo $ImgError;
 				return "Error:".$ImgError;
+
 			}
 			else
 			{

@@ -23,6 +23,10 @@ class Order
     function __construct()
     {
 
+       // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+       // $this->db= MySQLiQuery::getObject('127.0.0.1','root','anawany','phpdb');
+
+
 
          $configs = include('Conf.php');
         $this->db=MySQLiQuery::getObject($configs['host'],$configs['username'],$configs['pass'],$configs['DB']);

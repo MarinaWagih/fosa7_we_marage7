@@ -22,38 +22,31 @@ $(document).ready(function(){
             			////////////////////  submit product ////////
 		$('#submit').click(function(){
 
-			// $mydata=$('#name').val()+':'+$('#price').val()+":"+$('#category').val()+':'+$('#pic').val();
 			
 			alert($('#category').val());
 		
-			$.ajax({
+		// 	$.ajax({
+		// 		type:"POST"
+		// 	// url:'../Controllers/submitproduct.php?name='+$('#name').val()+'&price='+$('#price').val()+'&category='+$('#category').val()+'&pic='+$('#pic').val(),
+		// 	url:'../Controllers/submitproduct.php',
+		// 	data:'',
+		// 	dataType:'text',
+		// 	success:function(sata){
 
-			url:'../Controllers/submitproduct.php?name='+$('#name').val()+'&price='+$('#price').val()+'&category='+$('#category').val()+'&pic='+$('#pic').val(),
-			data:'',
-			dataType:'text',
-			success:function(sata){
-
-				window.location.replace('../html/products.php');
-			}
+		// 		window.location.replace('../html/products.php');
+		// 	}
 
 
 
 
-		});		
+		// });		
 
 
 
 		});
-
-
-
-
-
-
-	 			},
-	 			//window.location.replace("../html/products.php");
-
-		});
+	},
+	 			
+});
 	
 		
 		
