@@ -42,7 +42,11 @@ class OrderItem
     	if($this->db)
         {
 
+<<<<<<< HEAD
         	$result=  $this->db->select('ASSOCIATIVE','phpdb.ItemOrder',$TargetColumn,False,$whereColumn,$whereValue,'=',"BW_AND");
+=======
+        	$result=  $this->db->select('ASSOCIATIVE','phpdb.ItemOrder',$TargetColumn,False,$whereColumn,$whereValue,'=');
+>>>>>>> 0b72d7802fd356515e6de1850a424ac843064582
                 $Item=new Item();
 	        for ($i=0; $i < count($result); $i++) 
 	        { 

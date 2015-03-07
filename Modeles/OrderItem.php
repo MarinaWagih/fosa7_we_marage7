@@ -17,8 +17,8 @@ class OrderItem
 {
     function __construct()
     {
-        $this->db = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
-
+       // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->db = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
 
     }
     
@@ -28,7 +28,7 @@ class OrderItem
         if($this->db)
         {
         return $insert = $this->db->insert("ItemOrder", array("OrderId" , "ItemId" ,"quantity"),  
-        	array($data['OrderId'] ,$data['ItemId'] ,  $data['status'],  $data['quantity'] ));
+        	array($data['OrderId'] ,$data['ItemId'] ,$data['quantity'] ));
         }
         else
         {
@@ -95,7 +95,7 @@ class OrderItem
     {
        if($this->db)
         {
-	        $result=$this->db->update('phpdb.ItemOrder',$targetColumns,$newValues,$whereColumn,$whereValue);
+	        $result=$this->db->update('phpdb.ItemOrder',$targetColumns,$newValues,$whereColumn,$whereValue,'=','AND');
 	        
 	        return $result;
 	     }

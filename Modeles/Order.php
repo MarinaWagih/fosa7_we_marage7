@@ -14,13 +14,16 @@ include_once('MySQLiQuery.php');
 include_once('User.php');
 include_once('Room.php');
 include_once('OrderItem.php');
+
+
 class Order
 {
  
+     protected $db;
     function __construct()
     {
-        $this->db = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
-
+       // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->db= MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
 
     }
     
@@ -28,8 +31,8 @@ class Order
     {
         if($this->db)
         {
-            $date = new DateTime();
-            $date=$date->getTimestamp();
+            $date = date("Y-m-d H:i:s"); ;
+            //$date=$date->getTimestamp();
             $insert = $this->db->insert("Order", array("UserId" , "isPaid" ,"status","notes" ,"RoomId","totalBill" 
                     ,"timeStamp")
                 , array($data['UserId'] ,$data['isPaid'] ,  $data['status'], $data['notes'],$data['RoomId']
@@ -54,9 +57,20 @@ class Order
             $item=new OrderItem();
             for ($i=0; $i < count($result) ; $i++) 
             { 
-               $result[$i]["UserId"]=$user->selectOneUser("*","id",$result[$i]["UserId"]);
-               $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
-               $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+
+                if(isset($result[$i]["UserId"]))
+                {
+                        $result[$i]["UserId"]=$user->selectOneUser("*","id",$result[$i]["UserId"]);
+                }
+                if(isset($result[$i]["RoomId"]))
+                {
+                        $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
+                }
+                 if(isset($result[$i]["id"]))
+                {
+                    $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+                }
+
             }
             
             return $result;
@@ -92,6 +106,8 @@ class Order
             for ($i=0; $i < count($result) ; $i++) 
             { 
                $result[$i]["UserId"]=$usr->selectOneUser("*","id",$result[$i]["UserId"]);
+               // unset($result[$i]["UserId"][0]['password']);
+               // echo $result[$i]["UserId"][0]['password'];
                $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
                $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
             }
@@ -131,6 +147,29 @@ class Order
                  return "failed to connect to Database"."<br/>";
         }
     }
-
+     function selectOrder($TargetColumn,$whereColumn,$whereValue)
+    {
+         if($this->db)
+        {
+            $result=  $this->db->select('ASSOCIATIVE','phpdb.Order');
+            $user=new user();
+            $room=new Room();
+            $item=new Item();
+            for ($i=0; $i < count($result) ; $i++) 
+            { 
+               $result[$i]["UserId"]=$usr->selectOneUser("*","id",$result[$i]["UserId"]);
+               // unset($result[$i]["UserId"][0]['password']);
+               // echo $result[$i]["UserId"][0]['password'];
+               $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
+               $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+            }
+            
+            return $result;
+        }
+       else
+        {
+             return "failed to connect to Database"."<br/>";
+        }
+    }
     
 }

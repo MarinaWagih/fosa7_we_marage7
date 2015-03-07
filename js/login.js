@@ -14,11 +14,13 @@ $(document).ready(function () {
                         if (data==="Done")
                          {
                             $('#myDiv').html("Welcome");
-                            window.location = "";
+                            //window.location = "";
                          }
                         else
                         {
-                            $('#myDiv').html("email or password error");
+                         
+                                $('#myDiv').html("invalid email or password");
+                            
                         };
         });
 

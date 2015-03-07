@@ -22,8 +22,8 @@ class Item{
     protected  $TestObj;
     
     public function __construct() {
-      $this->TestObj = MySQLiQuery::getObject("127.0.0.1","root","bobosa","phpdb");
-
+     // $this->TestObj = MySQLiQuery::getObject($GLOBALS["host"],$GLOBALS["username"],$GLOBALS["pass"],$GLOBALS["DB"]);
+        $this->TestObj = MySQLiQuery::getObject('127.0.0.1','root','0000000mrmr','phpdb');
     }
 
     /*
@@ -59,13 +59,26 @@ class Item{
             return "Database connection Error";
         }
     }
-    public function deleteItem($data)
+    // public function deleteItem($data)
+    // {
+    //    if (isset($this->TestObj))
+    //     {
+
+    //         return   $this->TestObj->delete("Item","id",$data['id'],"=");
+           
+    //     }
+    //     else
+    //     {
+    //         return "Database connection Error";
+    //     }
+    // }
+     public function deleteItem($whereColumn,$whereValue)
     {
        if (isset($this->TestObj))
         {
 
-            return   $this->TestObj->delete("Item","id",$data['id'],"=");
-           
+            //return   $this->TestObj->delete("Item","id",$data['id'],"=");
+            return   $this->TestObj->delete("Item",$whereColumn,$whereValue,'=');
         }
         else
         {
@@ -98,7 +111,11 @@ class Item{
 
              $result= $this->TestObj->select("ASSOCIATIVE","Item",$TargetColumn,False,$whereColumn,$whereValue,'=');
              $Category= new Category();
-             $result[0]['CategoryId']=$Category->selectOneCategory("*","id",$result[0]['CategoryId']);
+             for ($i=0; $i <count($result) ; $i++) { 
+               # code...
+               $result[$i]['CategoryId']=$Category->selectOneCategory("*","id",$result[$i]['CategoryId']);
+             }
+            
              return $result;
         }
         else
