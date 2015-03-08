@@ -6,6 +6,7 @@
     <script type="text/javascript" src="../js/order.js"></script>
 </head>
 <body>
+
 <div id="transparent">
   <div id="Header">
   <div id="Links">
@@ -17,6 +18,7 @@
   </div>  
   </div>
   	<div id="Order" class="orderform">
+
   		<div id="SelectedItems"></div>
   		<div>
 

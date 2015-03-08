@@ -35,6 +35,14 @@
   		<input type="date" id="from" name="from">
   		
   		<label>Date to :</label>
+
+<a href="home.php">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="orders.php">Manual Order</a>&nbsp;&nbsp;<a href="checks.php">Checks</a>
+<br><br>	 
+
+
+  		<input type="date" id="from" name="from">
+  		
+
   		<input type="date" id="to" name="to">
   		
   		<select  name="user" id="usr" required>
@@ -42,13 +50,16 @@
 		</select>
 		
 		<br/><br/><br/>
-		
+		<center>
 		<div id="mydiv">
 			
 		</div>
+
   		
 
 </div>
 </div>
+  		</center>
+
 </body>
 </html>

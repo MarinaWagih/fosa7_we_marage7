@@ -14,7 +14,7 @@ $(document).ready(function () {
                         if (data==="Done")
                          {
                             $('#myDiv').html("Welcome");
-                            //window.location = "";
+                            
                          }
                         else
                         {

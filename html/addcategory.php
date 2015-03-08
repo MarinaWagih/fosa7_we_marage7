@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../js/addcategory.js"></script>
 </head>
 <body>
+
 <div id="transparent">
 	<div id="Header">
 		<img src="../img/images (16).png">
