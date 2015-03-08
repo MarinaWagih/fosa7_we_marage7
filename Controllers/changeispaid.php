@@ -1,22 +1,18 @@
 <?php
 
-require_once('../Modeles/Order.php');
+	require_once('../Modeles/Order.php');
 
 
-if(isset($_GET))
-{
-	$targetcolumn='isPaid';
+	if(isset($_GET))
+	{
+		$targetcolumn='isPaid';
 	
-	$conn = new Order();
+		$conn = new Order();
 		
-	$result=$conn->updateOneOrder($targetcolumn,"1",'id',$_GET['orderid']);
-
-}
-
-
-
-
-header('Location:../html/home.php');
+		if($_GET["orderid"])
+			$result=$conn->updateOneOrder($targetcolumn,"1",'id',$_GET['orderid']);
+ 			echo $result;
+	}
 
 
 ?>
