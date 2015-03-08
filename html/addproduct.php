@@ -8,7 +8,7 @@
     <script type="text/javascript" src="../js/addproduct.js"></script>
 </head>
 <body>
-<a href="">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="">Manual Order</a>&nbsp;&nbsp;<a href="">Checks</a>
+<a href="home.php">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="orders.php">Manual Order</a>&nbsp;&nbsp;<a href="checks.php">Checks</a>
 <h1>Add Product</h1>
 <form class="add" method="POST" action="../Controllers/submitproduct.php" enctype="multipart/form-data" 	accept-charset="utf-8">
 <center>

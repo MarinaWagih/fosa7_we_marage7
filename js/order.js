@@ -14,7 +14,7 @@ $(document).ready(function () {
     {
        totalOfTotal+= Quantity[i]*Price[i];   
     }
-      $("#Total").html("Total=<br>"+totalOfTotal);
+      $("#Total").html("Total  =  "+totalOfTotal+" L.E");
   }
        //alert("hhh");
        if($("#UserType").val()=="admin")
@@ -95,7 +95,7 @@ $(document).ready(function () {
                                           $("#Addeditem"+inc)
                                           .append("<input type='number'name='count' id='price"+inc+"' min='1' value='1'>");
                                           $("#Addeditem"+inc)
-                                          .append("<span class='tota' id='total"+inc+"'>"+itemprice+"</span> ");
+                                          .append("<span class='total' id='total"+inc+"'>"+itemprice+"</span> ");
                                           $("#Addeditem"+inc)
                                           .append("<span class='x' id='deletex"+inc+"'>"+"x"+"</span> ");
                                           $(this).off("click");
@@ -121,6 +121,7 @@ $(document).ready(function () {
                                                                         $('#AllItems').append($(".new"+getid[1]));
                                                                         $(".new"+getid[1]).attr("class", "item");                                                                      
                                                                         $("#Addeditem"+getid[1]).remove();
+                                                                        $(".item").on("click")
                                                                          inc--;
                                                                          IncTotal();
 

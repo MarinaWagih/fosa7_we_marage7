@@ -8,14 +8,7 @@
 	<script type="text/javascript" src="../js/reg.js"></script>
   </head>
   <body>
-  <div id="Header">
-		<a href="">Home</a>
-		<a href="">Product</a>	
-		<a href="">Users</a>
-		<a href="">Manual Orders</a>
-		<a href="">Checks</a>
-	    <img src="../img/finallogosmall.png">
-	</div>    
+     
   	<div id="Container">
   		<div id="Login" class="Wrapper">
 		 	<section class="loginform cf">

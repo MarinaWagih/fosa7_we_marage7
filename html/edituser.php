@@ -9,11 +9,12 @@
   </head>
   <body>
   <div id="Header">
-		<a href="">Home</a>
-		<a href="">Product</a>	
-		<a href="">Users</a>
-		<a href="">Manual Orders</a>
-		<a href="">Checks</a>
+		<a href="home.php">Home</a>
+		<a href="products.php">Product</a>	
+		<a href="users.php">Users</a>
+		<a href="orders.php">Manual Orders</a>
+		<a href="checks.php">Checks</a>
+
 	    <img src="../img/finallogosmall.png">
 	</div>    
   	<div id="Container">

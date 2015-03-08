@@ -1,0 +1,178 @@
+#transparent
+{
+	background-color: rgba(43, 54, 71, .5);
+	height: 115%;
+}
+body
+{
+/*	background: url('http://subtlepatterns.com/patterns/wood_pattern.png');
+	font-size: 10pt;*/
+    height: 100%; 
+	background-image: url("../img/restaurant-during-the-day.jpg");
+	background-image: -moz-url("../img/restaurant-during-the-day.jpg");
+/*	background: linear-gradient(rgba(83, 97, 121, 1),rgba(222, 234, 242, 1) );
+*/	background-size: cover;
+    -moz-background-size: cover; 
+	background-repeat: no-repeat;
+	/*background-color:#2F5168; */
+	position: absolute;
+	width: 100%;
+	padding: 0;
+}
+#Header
+{
+    height: 80px;
+	background: linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.5) );
+	background: -moz-linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.8) );	
+	background: -webkit-linear-gradient(rgba(250,250,250,1),rgba(250,250,250,0.8) );		
+    border-bottom: 10px solid #354053;
+}
+#Links p
+{
+	display: inline;
+	margin-left: 15px;	
+	font-size: -webkit-xxx-large;
+	font-size: -moz-xxx-large;
+	font-size: 50;	
+	color:rgb(43, 54, 71);
+	margin-bottom: 0px;
+	margin-top: 10px;
+
+}
+#Links img:nth-child(1)
+{
+	float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#Links img:nth-child(5)
+{
+	margin-top: -30px;
+	margin-left: 30%;
+}
+#Links a:nth-child(3)
+{
+   margin-left: 18%;
+}
+#Links a
+{
+	position: relative;
+	left: 7%;
+	top: -10px;
+	background: linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); 
+	background: -moz-linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); 	
+	text-decoration: none;
+	color: rgb(250,250,250);
+	line-height: 40px;
+	padding: 15px;
+	font-size: larger;
+	font-weight: 600;
+	font-family: serif;
+	border-radius: 5px;
+	margin-left: 15px;
+}
+#Links a:hover
+{
+/*	transform:rotate(360deg);
+    -webkit-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;*/
+	background: linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
+	background: -moz-linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
+}
+
+h1
+{
+	color: rgb(43, 54, 71);
+	font-size: -webkit-xxx-large;
+	font-size: -moz-xxx-large;	
+	font-family: serif;
+	/* background: linear-gradient(rgba(246, 243, 218, 1),rgba(237, 236, 188, .7) ); */
+	width: 830px;
+	padding: 25px;
+	border-bottom: 2px solid;
+	margin-top: 0;
+}
+#Total
+{
+	border: 2px solid rgb(43, 54, 71);
+	border-radius: 5px;
+	padding: 5px;
+	padding-right: 45px;
+}
+label,#Total
+{
+	font-size: x-large;
+    color: rgb(43, 54, 71);
+    margin-top: 15px;
+	margin-right: 7px;
+	font-family: serif;
+	margin-bottom: 15px;
+}
+
+select
+{
+	width: 110px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: large;
+}
+#transparent .orderform,#rightdiv
+{
+	float: left;
+	width: 45%;
+	margin: 4% 2% 2% 2%;
+	padding: 25px;
+	background-color: rgba(250,250,250,0.8);
+	border-radius: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
+    			inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 10%;
+}
+#rightdiv
+{
+	margin-left: 3%;
+}
+.orderform textarea
+{
+	height: 6%;
+}
+#confirm
+{
+	margin-top: 15;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: serif;
+	color: rgb(250,250,250);
+	background: linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%); 
+	background: -moz-linear-gradient(to bottom, #5F6E88 0%,#1E2736 100%);
+	position: relative;
+    left: 70%;
+}
+#confirm:hover
+{
+    background: linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
+	background: -moz-linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));	
+}
+.itemname,.price,.total,.x
+{
+	font-size: 25px;
+	font-family: serif;
+	color: rgb(43, 54, 71);
+}
+.total
+{
+	margin-left: 10px
+}
+#Notes
+{
+	width: 531px;
+	height: 129px;
+}
+#userscmb
+{
+	width: 236px;
+	float: right;
+}

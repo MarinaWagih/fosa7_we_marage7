@@ -4,8 +4,9 @@
 	<script type="text/javascript" src="../js/checks.js"></script>
 	
 	<script src="../js-webshim/minified/polyfiller.js"></script>
-  
-
+    <link rel="stylesheet" href="../css/checks.css">
+    <link rel="stylesheet" href="../css/css1/bootstrap.min.css">    
+<title>Checks</title>
 	
 <script>
   webshims.setOptions('waitReady', false);
@@ -16,12 +17,32 @@
 </head>
 
 <body>
-
+<div id="transparent">
+    <div id="Header">
+    	<img src="../img/images (16).png">
+		<p style=" text-indent: 75em;">My name</p>
+  		<a href="">Home</a>
+		<a href="products.php">Product</a>	
+		<a href="">Users</a>
+		<a href="">Manual Orders</a>
+		<a href="">Checks</a>
+	    <img src="../img/finallogosmall.png">
+	</div>
+<div id="content" class="wrapper">
+<center><h1>Checks</h1>	
 	 
-  		from:
+  		<label>Date From :</label>
   		<input type="date" id="from" name="from">
   		
-  		to:
+  		<label>Date to :</label>
+
+<a href="home.php">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="orders.php">Manual Order</a>&nbsp;&nbsp;<a href="checks.php">Checks</a>
+<br><br>	 
+
+
+  		<input type="date" id="from" name="from">
+  		
+
   		<input type="date" id="to" name="to">
   		
   		<select  name="user" id="usr" required>
@@ -33,6 +54,11 @@
 		<div id="mydiv">
 			
 		</div>
+
+  		
+
+</div>
+</div>
   		</center>
 
 </body>
