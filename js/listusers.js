@@ -3,7 +3,9 @@ $(document).ready(function(){
 	// $(function () 
  //  {
     
-    $.ajax({                                      
+  if($("#UserType").val()=="admin"){
+
+      $.ajax({                                      
       url: '../Controllers/users.php',           
       data: "",                        
       dataType: 'json',                      
@@ -15,7 +17,7 @@ $(document).ready(function(){
             
                  $(data).each(function(index , record) {
 
-       $('#output').append("<tr id='"+record.id+"'><td>"+record.id+"</td><td>"+record.name+"</td><td>"+record.RoomId[0].id+"</td><td>"+record.ext+"</td><td>"+record.picture+"</td><td><button class='delete'>Delete</button>&nbsp;&nbsp;<button class='edit'>Edit</button></td></tr>");
+       $('#output').append("<tr id='"+record.id+"'><td>"+record.id+"</td><td>"+record.name+"</td><td>"+record.RoomId[0].id+"</td><td>"+record.ext+"</td><td><img width='50px' height='50px' src='"+record.picture+"'</td><td><button class='delete'>Delete</button>&nbsp;&nbsp;<button class='edit'>Edit</button></td></tr>");
          
                     
 
@@ -50,20 +52,16 @@ $(document).ready(function(){
                                  window.location.replace('../html/edituser.php?userid='+id+'');
                          
                       }); 
-
-
-            
+  
           }
 
       });
-    // });
+  
 
+    }else{
 
+      window.location.replace('../html/Error.php');
 
-
-
-
-
-
+    }
 
 });

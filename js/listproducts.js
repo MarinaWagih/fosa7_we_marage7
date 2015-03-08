@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	$(function () 
+
+if($("#UserType").val()=="admin"){
+        $(function () 
   {
     
     $.ajax({                                      
@@ -17,12 +19,12 @@ $(document).ready(function(){
                   var av="";
                   if(record.isAvailable == "1"){
                  
-                    av="Available";
+                    av="Soon"
                  }else if(record.isAvailable == "0"){
-                    av="Soon";
+                    av="Available";
                  }
 
-                                 $('#output').append('<tr id ='+record.id+'><td>'+record.id+'</td><td>'+record.name+'</td><td>'+record.price+'</td><td>'+record.picture+'</td><td>'+record.isAvailable+'</td><td><button class="delete">Delete</button>&nbsp;&nbsp;<button class="edit">Edit</button>&nbsp;&nbsp;<button class="av">'+av+'</button></td></tr>');
+                                 $('#output').append('<tr id ='+record.id+'><td>'+record.id+'</td><td>'+record.name+'</td><td>'+record.price+'</td><td><img width="50px" height="50px" src="'+record.picture+'"></td><td>'+record.isAvailable+'</td><td><button class="delete">Delete</button>&nbsp;&nbsp;<button class="edit">Edit</button>&nbsp;&nbsp;<button class="av">'+av+'</button></td></tr>');
 
 
                 });
@@ -94,4 +96,14 @@ $(document).ready(function(){
       });
     });
 
-});
+
+     
+
+    }else{
+
+      window.location.replace('../html/Error.php');
+
+    }
+
+
+    });
