@@ -10,7 +10,7 @@ $(document).ready(function () {
         $.post("../Controllers/login.php",
             {'email':email,'password':password},
         function (data) {
-
+							alert(data);
                         if (data==="Done")
                          {
                             $('#myDiv').html("Welcome");

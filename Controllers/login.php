@@ -28,11 +28,6 @@
     	echo "No user in the system with this cradintional";
     }
 
-    if($_SESSION['Type']=='admin'){
-          header('Location:../html/home.php');
-    }else{
-          header('Location:../html/orders.php');
-    }
 
 }
 
