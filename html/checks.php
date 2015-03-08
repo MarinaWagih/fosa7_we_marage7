@@ -5,7 +5,7 @@
 	
 	<script src="../js-webshim/minified/polyfiller.js"></script>
   
-
+<title>Checks</title>
 	
 <script>
   webshims.setOptions('waitReady', false);
@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <a href="">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="">Manual Order</a>&nbsp;&nbsp;<a href="">Checks</a>
 
 	 <form>
   		from:
