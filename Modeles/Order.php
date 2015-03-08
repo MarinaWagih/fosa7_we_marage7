@@ -146,7 +146,7 @@ class Order
     {
         if($this->db)
         {
-            $result=$this->db->update('phpdb.Order',$targetColumns,$newValues,$whereColumn,$whereValue);
+            $result=$this->db->update('phpdb.Order',$targetColumns,$newValues,$whereColumn,$whereValue,"=");
             
             return $result;
         }

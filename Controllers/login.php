@@ -9,6 +9,7 @@
      {
         $DBpass=$result[0]['password'];
         $USpass=md5($_POST["password"]);
+        //$USpass=($_POST['password']);
       if ( $DBpass==$USpass) 
       {
       	

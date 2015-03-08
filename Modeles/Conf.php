@@ -2,7 +2,7 @@
 $conf=array(
 			"host"=>"127.0.0.1",
 			"username"=>"root",
-			"pass"=>"bobosa",
+			"pass"=>"anawany",
 			"DB"=>"phpdb");
 return $conf;
 ?>

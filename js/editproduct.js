@@ -6,10 +6,10 @@ if($("#UserType").val()=="admin"){
 				//////////////GET paramters from the link ////////////////
 
      			var parameter = window.location.search.replace( "?", "" ); // will return the GET parameter 
-	var values = parameter.split("=");
-	 // will return and array as ["name", "sample"] 
-	 if(values[1]!==null){
-	 	//alert('good');
+				var values = parameter.split("=");
+				 // will return and array as ["name", "sample"] 
+				 if(values[1]!==null){
+				 	//alert('good');
 	 					
 	 		//////////////////////////send id to edit///////////////////////////////
 
@@ -21,15 +21,11 @@ if($("#UserType").val()=="admin"){
 	 			success: function(data){
 
             		var arr = data.split(':');
+            		$('#zzz').val(arr[0]);
             		$('#name').val(arr[1]);
-	 				
 	 				$('#price').val(arr[2]);	
 
-	 				$('#userid').val(arr[0]);	
-
-
-
-
+	 				
 	 				},
 
 
