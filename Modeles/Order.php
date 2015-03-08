@@ -105,14 +105,39 @@ class Order
             $result=  $this->db->select('ASSOCIATIVE','phpdb.Order');
             $user=new user();
             $room=new Room();
-            $item=new Item();
+            $item=new OrderItem();
             for ($i=0; $i < count($result) ; $i++) 
             { 
-               $result[$i]["UserId"]=$usr->selectOneUser("*","id",$result[$i]["UserId"]);
+               $result[$i]["UserId"]=$user->selectOneUser("*","id",$result[$i]["UserId"]);
                // unset($result[$i]["UserId"][0]['password']);
                // echo $result[$i]["UserId"][0]['password'];
                $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
                $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+
+            }
+            
+            return $result;
+        }
+       else
+        {
+             return "failed to connect to Database"."<br/>";
+        }
+    }function selectAllOrdersbystatus($value)
+    {
+        if($this->db)
+        {
+            $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',"*",FALSE,'status',$value,'!=');
+            $user=new user();
+            $room=new Room();
+            $item=new OrderItem();
+            for ($i=0; $i < count($result) ; $i++) 
+            { 
+               $result[$i]["UserId"]=$user->selectOneUser("*","id",$result[$i]["UserId"]);
+               // unset($result[$i]["UserId"][0]['password']);
+               // echo $result[$i]["UserId"][0]['password'];
+               $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
+               $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+
             }
             
             return $result;
@@ -127,7 +152,7 @@ class Order
     {
         if($this->db)
         {
-            $result=  $this->db->delete('phpdb.Order',$whereColumn,$whereValue,'=');
+            $result=  $this->db->delete('phpdb.Order',$whereColumn,$whereValue);
             
             return $result;
         }
@@ -141,7 +166,7 @@ class Order
     {
         if($this->db)
         {
-            $result=$this->db->update('phpdb.Order',$targetColumns,$newValues,$whereColumn,$whereValue);
+            $result=$this->db->update('phpdb.Order',$targetColumns,$newValues,$whereColumn,$whereValue,'=');
             
             return $result;
         }
@@ -161,8 +186,6 @@ class Order
             for ($i=0; $i < count($result) ; $i++) 
             { 
                $result[$i]["UserId"]=$usr->selectOneUser("*","id",$result[$i]["UserId"]);
-               // unset($result[$i]["UserId"][0]['password']);
-               // echo $result[$i]["UserId"][0]['password'];
                $result[$i]["RoomId"]=$room->selectOneRoom("*","id",$result[$i]["RoomId"]);
                $result[$i]["Itemes"]=$item->selectOneItemOrder("*","OrderId",$result[$i]['id']);
             }

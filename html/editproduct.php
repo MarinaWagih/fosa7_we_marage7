@@ -8,7 +8,6 @@
     <script type="text/javascript" src="../js/editproduct.js"></script>
 </head>
 <body>
-<a href="">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="">Manual Order</a>&nbsp;&nbsp;<a href="">Checks</a>
 <h1>Edit Product</h1>
 <form class="add" method="POST" action="../Controllers/updateproduct.php" enctype="multipart/form-data" accept-charset="utf-8">
 <center>

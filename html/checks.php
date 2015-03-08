@@ -16,8 +16,9 @@
 </head>
 
 <body>
-
-	 <form>
+<a href="home.php">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="orders.php">Manual Order</a>&nbsp;&nbsp;<a href="checks.php">Checks</a>
+<br><br>	 
+<form>
   		from:
   		<input type="date" id="from" name="from">
   		

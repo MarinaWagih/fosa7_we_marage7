@@ -5,7 +5,8 @@
     <script type="text/javascript" src="../js/order.js"></script>
 </head>
 <body>
-  	<div id="Order">
+ <a href="home.php">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="users.php">Users</a>&nbsp;&nbsp;<a href="checks.php">Checks</a><br><br> 	
+    <div id="Order">
   		<div id="SelectedItems"></div>
   		<div>
   			<label> Notes: </label>
