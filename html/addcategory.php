@@ -2,47 +2,42 @@
 <html>
 <head>
 	<title>Add Category</title>
-
-	<script type="text/javascript" src="../js/jquery.js"></script>
-    
+ 	<link rel="stylesheet" href="../css/addcategory.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>    
     <script type="text/javascript" src="../js/addcategory.js"></script>
 </head>
 <body>
-<a href="">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="">Manual Order</a>&nbsp;&nbsp;<a href="">Checks</a>
+<div id="transparent">
+	<div id="Header">
+		<img src="../img/images (16).png">
+		<p>My name</p>
+		<a href="">Home</a>
+		<a href="products.php">Products</a>
+		<a href="">Manual Order</a>
+		<a href="">Checks</a>
+		<img src="../img/finallogosmall.png">
+    </div>
+<div id="content" class="wrapper">
 <h1>Add Category</h1>
 <form class="add">
-<center>
-	<table width="500px"  height="300px">
-		<tr>
-			<td>
+
 				<label>Category:</label>	
-			</td>
-			<td>
 				<input type="text" id='name' name="name"></input>
-			</td>
-		</tr>
-		<tr>
-			<td>
+				</br>
 				<label>Discription:</label>	
-			</td>
-			<td>
+				</br>
 				<textarea type="text" id='disc' name="disc"></textarea>
-			</td>
-		</tr>
-		
-		
-		<tr>
-			<td align="right">
-				<input type="submit" action='../addproduct.php' id='submit' name="submit"></input>
-			<td>
-				<input type="reset"></input>
-			</td>
-		</tr>
-	</table>
-</center>
+				</br>
+				<center>
+				<input type="submit" action='../addproduct.php' id='submit' name="submit" value="Add">
+				<input type="reset" value="Reset" id="Reset"></input>
+				</center>
+
 </form>
 <?php session_start();?>
 <input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId']?>">
 <input type="hidden" id="UserType" value="<?php echo $_SESSION['Type']?>">
+</div>
+</div>
 </body>
 </html>

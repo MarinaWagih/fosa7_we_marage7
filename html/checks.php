@@ -4,7 +4,8 @@
 	<script type="text/javascript" src="../js/checks.js"></script>
 	
 	<script src="../js-webshim/minified/polyfiller.js"></script>
-  
+    <link rel="stylesheet" href="../css/checks.css">
+    <link rel="stylesheet" href="../css/css1/bootstrap.min.css">    
 <title>Checks</title>
 	
 <script>
@@ -16,13 +17,24 @@
 </head>
 
 <body>
-    <a href="">Home</a>&nbsp;&nbsp;<a  href="products.php">Products</a>&nbsp;&nbsp;<a href="">Manual Order</a>&nbsp;&nbsp;<a href="">Checks</a>
-
-	 <form>
-  		from:
+<div id="transparent">
+    <div id="Header">
+    	<img src="../img/images (16).png">
+		<p style=" text-indent: 75em;">My name</p>
+  		<a href="">Home</a>
+		<a href="products.php">Product</a>	
+		<a href="">Users</a>
+		<a href="">Manual Orders</a>
+		<a href="">Checks</a>
+	    <img src="../img/finallogosmall.png">
+	</div>
+<div id="content" class="wrapper">
+<center><h1>Checks</h1>	
+	 
+  		<label>Date From :</label>
   		<input type="date" id="from" name="from">
   		
-  		to:
+  		<label>Date to :</label>
   		<input type="date" id="to" name="to">
   		
   		<select  name="user" id="usr" required>
@@ -35,6 +47,8 @@
 			
 		</div>
   		
-</form>
+
+</div>
+</div>
 </body>
 </html>

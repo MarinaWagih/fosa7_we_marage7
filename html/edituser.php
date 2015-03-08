@@ -9,8 +9,10 @@
   </head>
   <body>
   <div id="Header">
+  
+
 		<a href="">Home</a>
-		<a href="">Product</a>	
+		<a href="products.php">Product</a>	
 		<a href="">Users</a>
 		<a href="">Manual Orders</a>
 		<a href="">Checks</a>

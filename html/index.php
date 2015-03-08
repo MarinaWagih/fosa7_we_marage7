@@ -3,14 +3,25 @@
 <head>
 	<title>HTML5 Login</title>
 	<link rel="stylesheet" href="../css/normalize.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/login.css">
 	
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/login.js"></script>
 </head>
 <body>
+  <div id="Header">
+<!--   	<img src="../Imgs/images (16).png">
+	<p style=" text-indent: 77em;">My name</p> -->	
+		<a href="">Home</a>
+		<a href="">Product</a>	
+		<a href="">Users</a>
+		<a href="">Manual Orders</a>
+		<a href="">Checks</a>	
+	    <img src="../img/finallogosmall.png">
+	</div>
 <div id="Container">
 	<section class="loginform cf">
+		<img src="../img/finallogo.png">
 		<!-- <form name="login"  accept-charset="utf-8"> -->
 		<div >
 			<ul>
