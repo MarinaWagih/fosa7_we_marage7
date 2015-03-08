@@ -17,7 +17,7 @@
 
 <body>
 
-	 <form>
+	 
   		from:
   		<input type="date" id="from" name="from">
   		
@@ -29,11 +29,11 @@
 		</select>
 		
 		<br/><br/><br/>
-		
+		<center>
 		<div id="mydiv">
 			
 		</div>
-  		
-</form>
+  		</center>
+
 </body>
 </html>
