@@ -5,9 +5,10 @@ $(document).ready(function () {
   var Price=[];
   var inc=0;
   var userid=$('#UserId').val();
+  var totalOfTotal=0;
   function IncTotal()
   {
-    var totalOfTotal=0;
+    totalOfTotal=0;
     console.log("inc in total"+inc);
     for (var i = 0; i < inc; i++) 
     {
@@ -20,8 +21,18 @@ $(document).ready(function () {
        {
         $.post("../Controllers/returnallusers.php",
         function (data) {
-                       
-                                         
+                       $('#latestOrder').html("<select id='userscmb'></select>");
+                       var obj = $.parseJSON(data);
+        
+                      for(var i = 0 ; i < obj.length ; i++)
+                      {
+                        $("#userscmb").append("<option value='"+obj[i]["id"]+"'>"+obj[i]['name']+"</option>");
+                      }
+                      userid= $("#userscmb").val();
+                      $("#userscmb").change(function() {
+                                                           userid= $("#userscmb").val();
+                                                           console.log(userid);
+                                                        });              
                       });
        }
        else
@@ -108,7 +119,8 @@ $(document).ready(function () {
                                                                         console.log(getid[1]);
                                                                        // console.log($(".new"+getid[1]));
                                                                         $('#AllItems').append($(".new"+getid[1]));
-                                                                         $("#Addeditem"+getid[1]).remove();
+                                                                        $(".new"+getid[1]).attr("class", "item");                                                                      
+                                                                        $("#Addeditem"+getid[1]).remove();
                                                                          inc--;
                                                                          IncTotal();
 
@@ -143,14 +155,13 @@ $(document).ready(function () {
                                      $.post("../Controllers/SaveOrder.php",
                                       {"Item_Order":OrderItem,"Quantity":Quantity,
                                       "notes":$("#Notes").val(),"RoomId":$("#RoomNo").val()
-                                      ,"userid":userid}
+                                      ,"userid":userid,"totalbill":totalOfTotal}
                                       ,function(data)
                                       {
                                       
-                                       if (data.length>OrderItem.length)
-                                        {
-                                          window.location = "";
-                                        }
+                                       
+                                          alert(data);
+                                        
                                        
                                        });
                                    }

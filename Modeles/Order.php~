@@ -89,7 +89,12 @@ class Order
        if($this->db)
         {
             $result=  $this->db->select('ASSOCIATIVE','phpdb.Order',$targetColumn,False,$whereColumn,$whereValue,$relationalOperator, $logicalOperator);
-            
+            $orderitem=new OrderItem();
+            for ($i=0; $i < count($result) ; $i++) 
+            { 
+               $result[$i]["Items"]=$orderitem->selectOneItemOrder("*","OrderId",$result[$i]['id']);
+               
+            }
             return $result;
         }
        else
