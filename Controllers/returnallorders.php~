@@ -1,21 +1,30 @@
 <?php
-
+	session_start();
+	
 	include_once("../Modeles/Order.php");
 	
 	$usr = new Order();
 	$result="";
-
+	$userID = "";
+	
+	if($_SESSION['Type']=='admin')
+	{
+		$userID = $_POST['user'];
+	}
+	else
+	{
+		$userID = $_SESSION['UserId'] ;
+	}
 	
 	if(empty($_POST['from']) || empty($_POST['to']))
 	{
 		if(!empty($_POST['from']))
 		{
-			echo "bnm"."<br/>";
 			$from = date("Y-m-d", strtotime($_POST['from']));
 			
 			$result  = $usr->selectSpecOrders("*" ,false,
 				["UserId","isPaid","timeStamp"] ,
-				[$_POST['user'] , "0" , $from ] ,
+				[$userID , "0" , $from ] ,
 				['=','=','>'] ,
 				['AND','AND']
 				);
@@ -24,22 +33,20 @@
 		{
 			if(!empty($_POST['to']))
 			{
-				echo "ghj"."<br/>";
-				$to = date("Y-m-d", strtotime($_POST['to']));
+				$to = date("Y-m-d", strtotime($_POST['to']. ' + 1 day'));
 				
 				$result  = $usr->selectSpecOrders("*" ,false,
 					["UserId","isPaid" , "timeStamp"] ,
-					[$_POST['user'] , "0"  , $to] ,
+					[$userID , "0"  , $to] ,
 					['=','=','<'] ,
 					['AND','AND']
 					);
 			}
 			else
 			{
-					echo "ert"."<br/>";
 					$result  = $usr->selectSpecOrders("*" ,false,
 						["UserId","isPaid"] ,
-						[$_POST['user'] , "0"] ,
+						[$userID , "0"] ,
 						['=','='] ,
 						['AND']
 						);
@@ -49,13 +56,12 @@
 	}
 	else
 	{
-		echo "yui"."<br/>";
 		$from = date("Y-m-d", strtotime($_POST['from']));
-		$to = date("Y-m-d", strtotime($_POST['to']));
+		$to = date("Y-m-d", strtotime($_POST['to']. ' + 1 day'));
 		
 		$result  = $usr->selectSpecOrders("*" ,false,
 			["UserId","isPaid","timeStamp" , "timeStamp"] ,
-			[$_POST['user'] , "0" , $from , $to] ,
+			[$userID , "0" , $from , $to] ,
 			['=','=','>','<'] ,
 			['AND','AND','AND']
 			);
