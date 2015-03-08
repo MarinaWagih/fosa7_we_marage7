@@ -119,7 +119,8 @@ $(document).ready(function () {
                                                                         console.log(getid[1]);
                                                                        // console.log($(".new"+getid[1]));
                                                                         $('#AllItems').append($(".new"+getid[1]));
-                                                                        $(".new"+getid[1]).addClass('item')                                                                         $("#Addeditem"+getid[1]).remove();
+                                                                        $(".new"+getid[1]).attr("class", "item");                                                                      
+                                                                        $("#Addeditem"+getid[1]).remove();
                                                                          inc--;
                                                                          IncTotal();
 
