@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+  
+  alert($("#UserType").val());
   var OrderItem=[];
   var Quantity=[];
   var Price=[];
@@ -19,6 +20,7 @@ $(document).ready(function () {
        //alert("hhh");
        if($("#UserType").val()=="admin")
        {
+        $('.nohide').hide();
         $.post("../Controllers/returnallusers.php",
         function (data) {
                        $('#latestOrder').html("<select id='userscmb'></select>");
@@ -35,8 +37,9 @@ $(document).ready(function () {
                                                         });              
                       });
        }
-       else
+       else if($("#UserType").val()=="user")
        {
+        $('.hideme').hide();
          //****************************LASTORDER*************************************
         $.post("../Controllers/lastorder.php",
         function (data) {
@@ -57,6 +60,9 @@ $(document).ready(function () {
                                          
             });
        }
+       // else{
+       //    window.location.replace('../html/index.php');
+       // }
       
         //**********************************************************************************
         //*****************************AllItems*********************************************
@@ -79,7 +85,7 @@ $(document).ready(function () {
         //**********************************************************************************
         //**************************ItemClickAction*****************************************
  
-                        $('.item').click(function() {
+                        $('.item').click(function(){
                                           var id=this.id ;
                                           OrderItem.push(id);
                                           Quantity.push(1);
@@ -167,4 +173,8 @@ $(document).ready(function () {
                                        });
                                    }
                                   }); 
+
+
+ 
+  
 });

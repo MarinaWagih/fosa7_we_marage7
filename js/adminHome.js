@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	$.ajax({
+	if($("#UserType").val()=="admin"){
+
+		$.ajax({
 
 		url:'../Controllers/listordersbyadmin.php',
 		data:'',
@@ -43,22 +45,21 @@ $(document).ready(function(){
 						success:function(){
 								 window.location.replace('../html/home.php');
 						}
-
-					});
-
-					
+					});				
 
 				});
-
-
-
-
 		}
-
 	});
+
+
+	}else{
+		window.location.replace('../html/Error.php');
+	}
 
 	
 
-
-
 });
+
+
+
+	

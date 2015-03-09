@@ -1,7 +1,9 @@
 $(document).ready(function () 
 {
-	
-   	$.post("../Controllers/returnallusers.php",
+	alert($("#UserType").val());
+   	
+   	if($("#UserType").val()=="admin"){
+   		$.post("../Controllers/returnallusers.php",
    	
    	function(data)
    	{
@@ -96,6 +98,11 @@ $(document).ready(function ()
 	$("#to").change(connect);
 	$("#usr").change(connect);
 
+
+   	}else{
+
+   		window.location.replace('../html/Error.php');
+   	}
 
 
 

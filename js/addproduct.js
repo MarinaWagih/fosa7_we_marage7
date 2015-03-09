@@ -19,41 +19,17 @@ if($("#UserType").val()=="admin"){
             				$('#category').append('<option>'+arr[i]+'</option>');
             			};	
 
-
-
             			////////////////////  submit product ////////
 		$('#submit').click(function(){
-
-			
+	
 			alert($('#category').val());
 		
-		// 	$.ajax({
-		// 		type:"POST"
-		// 	// url:'../Controllers/submitproduct.php?name='+$('#name').val()+'&price='+$('#price').val()+'&category='+$('#category').val()+'&pic='+$('#pic').val(),
-		// 	url:'../Controllers/submitproduct.php',
-		// 	data:'',
-		// 	dataType:'text',
-		// 	success:function(sata){
-
-		// 		window.location.replace('../html/products.php');
-		// 	}
-
-
-
-
-		// });		
-
-
-
 		});
 	},
 	 			
 });
 	
-		
-		
-
-    }else{
+   }else{
 
       window.location.replace('../html/Error.php');
 
