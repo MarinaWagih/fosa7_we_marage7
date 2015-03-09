@@ -12,7 +12,12 @@
   <div id="Header">
 <!--   	<img src="../Imgs/images (16).png">
 	<p style=" text-indent: 77em;">My name</p> -->	
-		
+		<?php session_start();
+		if(isset($_SESSION['UserId'])){
+			header('Location:../html/home.php');
+			exit();
+		}
+		?>
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/finallogosmall.png">
 	</div>
 <div id="Container">

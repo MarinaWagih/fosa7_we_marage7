@@ -1,8 +1,14 @@
 <?php
 	include_once('../Modeles/User.php');
         
+
   // if(!empty($_SESSION['UserId'])){
-        	if(isset($_POST))
+        	//if(isset($_POST))
+
+  // if(session_status() !== PHP_SESSION_ACTIVE){
+  
+          if(isset($_POST))
+
         	{
         		$currUser = new User();
                         
