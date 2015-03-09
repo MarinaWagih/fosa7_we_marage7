@@ -12,12 +12,8 @@
   <div id="Header">
 <!--   	<img src="../Imgs/images (16).png">
 	<p style=" text-indent: 77em;">My name</p> -->	
-		<a href="">Home</a>
-		<a href="">Product</a>	
-		<a href="">Users</a>
-		<a href="">Manual Orders</a>
-		<a href="">Checks</a>	
-	    <img src="../img/finallogosmall.png">
+		
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../img/finallogosmall.png">
 	</div>
 <div id="Container">
 	<section class="loginform cf">
@@ -34,6 +30,10 @@
 					<input type="password" id="password" name="password" placeholder="password" required></li>
 				<li>
 					<input id="login" type="submit" value="Login">
+				</li>
+				<li><center>
+					<a href="givemail.php">Forgot your password !</a>
+					</center>
 				</li>
 			</ul>
 		<!-- </form> -->

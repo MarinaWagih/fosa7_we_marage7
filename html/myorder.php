@@ -7,8 +7,8 @@
 	<script src="../js-webshim/minified/polyfiller.js"></script>
     <link rel="stylesheet" href="../css/checks.css">
     <link rel="stylesheet" href="../css/css1/bootstrap.min.css">    
-<title>Orders</title>
-	
+<title>My Orders</title>
+
 <script>
   webshims.setOptions('waitReady', false);
   webshims.setOptions('forms-ext', {types: 'date'});
@@ -18,15 +18,16 @@
 </head>
 
 <body>
+<?php session_start();?>
 <div id="transparent">
     <div id="Header">
-    	<img src="../img/images (16).png">
-		<p style=" text-indent: 75em;">My name</p>
-  		<a href="">Home</a>
-		<a href="products.php">Product</a>	
-		<a href="">Users</a>
-		<a href="">Manual Orders</a>
-		<a href="">Checks</a>
+    	<br>
+    	<img width="50px" height="50px" src="<?php echo $_SESSION['picture']; ?>">
+    	<span><?php echo $_SESSION['username']; ?></span>
+		
+  		<a href="orders.php">Home</a>
+		
+		<a href="out.php">Log out</a>
 	    <img src="../img/finallogosmall.png">
 	</div>
 <div id="content" class="wrapper">
@@ -51,7 +52,11 @@
 
 </div>
 </div>
-  		</center>
+</center>
+<input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId']?>">
+<input type="hidden" id="UserType" value="<?php echo $_SESSION['Type']?>">
+<input type="hidden" id="user" value="<?php echo $_SESSION['username'];?>">
+<input type="hidden" id="picture" value="<?php echo $_SESSION['picture'];?>">
 
 </body>
 </html>

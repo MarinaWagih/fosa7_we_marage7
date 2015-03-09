@@ -8,15 +8,21 @@
 	<script type="text/javascript" src="../js/edituser.js"></script>
   </head>
   <body>
+	<?php session_start();?>
+ 
   <div id="Header">
-		<a href="home.php">Home</a>
-		<a href="products.php">Product</a>	
-		<a href="users.php">Users</a>
-		<a href="orders.php">Manual Orders</a>
-		<a href="checks.php">Checks</a>
-
+    	<br>
+    	<img width="50px" height="50px" src="<?php echo $_SESSION['picture']; ?>">
+    	<span><?php echo $_SESSION['username']; ?></span>
+		
+  		<a href="home.php">Home</a>&nbsp;&nbsp;
+  		<a href="users.php">User</a>&nbsp;&nbsp;
+		<a href="products.php">Products</a>&nbsp;&nbsp;
+		<a href="orders.php">Manual Order</a>&nbsp;&nbsp;
+		<a href="checks.php">Checks</a>&nbsp;&nbsp;
+		<a href="out.php" >Log out</a>
 	    <img src="../img/finallogosmall.png">
-	</div>    
+	</div>
   	<div id="Container">
   		<div id="Login" class="Wrapper">
 		 	<section class="loginform cf">
@@ -64,6 +70,11 @@
 				</form>
 			</section>
   		</div>
-  	</div>	
+  	</div>
+<input type="hidden" id="UserId"   value="<?php echo $_SESSION['UserId'];?>">
+<input type="hidden" id="UserType" value="<?php echo $_SESSION['Type'];?>">
+<input type="hidden" id="user"     value="<?php echo $_SESSION['username'];?>">
+<input type="hidden" id="picture"  value="<?php echo $_SESSION['picture'];?>">
+	
   </body>
 </html>

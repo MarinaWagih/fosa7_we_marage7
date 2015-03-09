@@ -24,6 +24,7 @@ require_once('../Modeles/uploadimg.php');
 				$conn= new Item();
 				$result2=$conn->insertItem($data);	
 				echo $result2;
+				header('Location:../html/products.php');
 
 		}else{
 

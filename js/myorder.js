@@ -1,7 +1,7 @@
 $(document).ready(function () 
 {
-	
-  	
+	if($("#UserType").val()=="user"){
+
 	function connect()
 	{
 		var fr = $("#from").val();
@@ -33,17 +33,36 @@ $(document).ready(function ()
 											+"</tr>");
 											
 				var x="";
+				var y="";
 				if(data[i].status=='processing')
 				{
-					x="<button id='pay-"+data[i].id+"'>Cancel</button>";
+					x=$("<button id='pay-"+data[i].id+"'>Cancel</button>");
+
+					x.click(function()
+							{
+
+									var id=this.id.split("-");
+									$.ajax({
+		
+									type:"GET",
+									url:'../Controllers/deleteorder.php?orderid='+id[1],
+									data:'',
+									dataType:'text',
+									success:function(data){
+											
+											$("#display"+id[1]).slideUp('slow');
+											$("#"+id[1]).slideUp('slow');
+									}});
+							});
 				}
 				$('#'+data[i].id).append("<tr>"+"<td id='show-"+data[i].id+"'>+</td>"
 										+"<td>"+data[i].timeStamp+"</td>"
 										+"<td id='status-"+data[i].id+"'>"+data[i].status+"</td>"
 										+"<td>"+data[i].totalBill+"</td>"
-										+"<td>"+x+"</td>"
+										+"<td class='cancelContainer'>"+"</td>"
 										+"</tr>");
-										
+				
+				$(".cancelContainer",'#'+data[i].id).append(x);					
 				for(var j=0;j<data[i].Items.length;j++)
 				{
 			
@@ -51,26 +70,8 @@ $(document).ready(function ()
 					
 				 }
 				
-				//if(data[i].status=='processing')
-				//{
-					$("#pay-"+data[i].id).click(function()
-											{
-													var id=this.id.split("-");
-													$.ajax({
-						
-													type:"GET",
-													url:'../Controllers/deleteorder.php?orderid='+id[1],
-													data:'',
-													dataType:'text',
-													success:function(data){
-															
-															$("#display"+id[1]).slideUp('slow');
-															$("#"+id[1]).slideUp('slow');
-													}});
-											});
-				//}
-											
-				 
+										
+
 				$('#display'+data[i].id).hide();					
 				$('#show-'+data[i].id).click(function()
 													{
@@ -93,6 +94,19 @@ $(document).ready(function ()
 	$("#to").change(connect);
 	$("#usr").change(connect);
 
+
+
+	}else{
+
+		
+		 window.location.replace('../html/Error.php');
+
+
+
+	}
+	
+	   	
+	
 
 
 
