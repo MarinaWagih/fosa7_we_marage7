@@ -16,7 +16,8 @@
       	session_start();
       	$_SESSION['UserId']=$result[0]['id'];
         $_SESSION['Type']=$result[0]['type'];
-      	echo "Done";
+        $_SESSION
+      	echo "Done:".$_SESSION['Type'];
       }
       else
       {
@@ -28,11 +29,7 @@
     	echo "No user in the system with this cradintional";
     }
 
-    if($_SESSION['Type']=='admin'){
-          header('Location:../html/home.php');
-    }else{
-          header('Location:../html/orders.php');
-    }
+    
 
 }
 

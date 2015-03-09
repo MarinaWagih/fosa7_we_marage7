@@ -20,9 +20,10 @@
 		
 		
 			$res = explode(':',$res);
+			$hashed=md5($_POST["password"]);
 		
 			if($res[0]=="success")
-			$result = $usr->insertUser([$_POST["Name"],$_POST["E-mail"],$_POST["password"],$_POST["RoomNo"],$_POST["Ext"],$res[1],"user"]);
+			$result = $usr->insertUser([$_POST["Name"],$_POST["E-mail"],$hashed,$_POST["RoomNo"],$_POST["Ext"],$res[1],"user"]);
 			else
 				echo $res[0].": ".$res[1];
 			header('Location: ../html/users.php');
