@@ -7,14 +7,14 @@
 	$result="";
 	$userID = "";
 	
-//	if($_SESSION['Type']=='admin')
-//	{
+	if($_SESSION['Type']=='admin')
+	{
 		$userID = $_POST['user'];
-//	}
-//	else
-//	{
-//		$userID = $_SESSION['UserId'] ;
-//	}
+	}
+	else
+	{
+		$userID = $_SESSION['UserId'] ;
+	}
 	
 	if(empty($_POST['from']) || empty($_POST['to']))
 	{

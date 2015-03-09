@@ -45,7 +45,7 @@ $(document).ready(function ()
 											+"<td>"+"is paid"+"</td>"
 											+"</tr>");
 			
-				$('#'+data[i].id).append("<tr>"+"<td id='show"+data[i].id+"'>+</td>"+"<td>"+data[i].timeStamp+"</td>"
+				$('#'+data[i].id).append("<tr>"+"<td id='show-"+data[i].id+"'>+</td>"+"<td>"+data[i].timeStamp+"</td>"
 										+"<td>"+data[i].totalBill+"</td>"
 										+"<td>"+"<button id='pay-"+data[i].id+"'>Payed</button>"+"</td>"
 										+"</tr>");
@@ -59,15 +59,27 @@ $(document).ready(function ()
 				
 				$("#pay-"+data[i].id).click(function()
 											{
-												
-											}
-				);
+													var id=this.id.split("-");
+													$.ajax({
+						
+													type:"GET",
+													url:'../Controllers/changeispaid.php?orderid='+id[1],
+													data:'',
+													dataType:'text',
+													success:function(data){
+															// $("#pay-"+data[i].id).attr("disabled","true");
+															//alert(data);
+															$("#display"+id[1]).slideUp('slow');
+															$("#"+id[1]).slideUp('slow');
+													}});
+											});
+											
 				 
 				$('#display'+data[i].id).hide();					
-				$('#show'+data[i].id).click(function()
+				$('#show-'+data[i].id).click(function()
 													{
 													
-														var id=this.id.split("w");
+														var id=this.id.split("-");
 														$('#display'+id[1]).slideToggle( "slow" );
 													});				
 				$("#mydiv").append("<br/><br/>");

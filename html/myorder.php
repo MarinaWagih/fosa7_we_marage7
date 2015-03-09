@@ -1,0 +1,56 @@
+<html>
+<head>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/myorder.js"></script>
+	
+	<script src="../js-webshim/minified/polyfiller.js"></script>
+    <link rel="stylesheet" href="../css/checks.css">
+    <link rel="stylesheet" href="../css/css1/bootstrap.min.css">    
+<title>Checks</title>
+	
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+</script>
+
+</head>
+
+<body>
+<div id="transparent">
+    <div id="Header">
+    	<img src="../img/images (16).png">
+		<p style=" text-indent: 75em;">My name</p>
+  		<a href="">Home</a>
+		<a href="products.php">Product</a>	
+		<a href="">Users</a>
+		<a href="">Manual Orders</a>
+		<a href="">Checks</a>
+	    <img src="../img/finallogosmall.png">
+	</div>
+<div id="content" class="wrapper">
+<center><h1>Checks</h1>	
+	 
+  		<label>Date From :</label>
+  		<input type="date" id="from" name="from">
+  		
+  		<label>Date to :</label>
+
+
+  		<input type="date" id="to" name="to">
+  		
+		
+		<br/><br/><br/>
+		<center>
+		<div id="mydiv">
+			
+		</div>
+
+  		
+
+</div>
+</div>
+  		</center>
+
+</body>
+</html>

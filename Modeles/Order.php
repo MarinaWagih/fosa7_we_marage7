@@ -157,7 +157,7 @@ class Order
     {
         if($this->db)
         {
-            $result=  $this->db->delete('phpdb.Order',$whereColumn,$whereValue);
+            $result=  $this->db->delete('phpdb.Order',$whereColumn,$whereValue,'=');
             
             return $result;
         }

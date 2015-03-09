@@ -14,6 +14,7 @@
 		<a href="users.php">Users</a>
 		<a href="orders.php">Manual Orders</a>
 		<a href="checks.php">Checks</a>
+
 	    <img src="../img/finallogosmall.png">
 	</div>    
   	<div id="Container">
