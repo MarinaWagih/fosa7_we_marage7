@@ -9,11 +9,10 @@
   </head>
   <body>
 	<?php session_start();?>
- 
+ <div id="transparent">
   <div id="Header">
-    	<br>
     	<img width="50px" height="50px" src="<?php echo $_SESSION['picture']; ?>">
-    	<span><?php echo $_SESSION['username']; ?></span>
+    	<p><?php echo $_SESSION['username']; ?></p>
 		
   		<a href="home.php">Home</a>&nbsp;&nbsp;
   		<a href="users.php">User</a>&nbsp;&nbsp;
@@ -32,7 +31,8 @@
 						<li>
 							<label for="Name">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							<input type="Name" id="name" name="Name" placeholder="Name" required>
-							<span id="spanname" ></span><input type='text' id='userid' name='userid'  ></input>
+							<span id="spanname" ></span>
+							<input type='hidden' id='userid' name='userid'  ></input>
 							</li>
 						<li>
 							<label for="E-mail">E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -75,6 +75,6 @@
 <input type="hidden" id="UserType" value="<?php echo $_SESSION['Type'];?>">
 <input type="hidden" id="user"     value="<?php echo $_SESSION['username'];?>">
 <input type="hidden" id="picture"  value="<?php echo $_SESSION['picture'];?>">
-	
+	</div>
   </body>
 </html>

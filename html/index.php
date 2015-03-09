@@ -27,7 +27,7 @@
 		<div >
 			<ul>
 				<li>
-					<label for="usermail">Email:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<label for="usermail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 					<input type="email" id="usermail" name="usermail" placeholder="yourname@email.com" required>
 				</li>
 				<li>

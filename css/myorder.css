@@ -34,7 +34,7 @@ html body
 {
 	margin-top: -27px;
 }
-#Header img:nth-child(5)
+#Header img:nth-child(8)
 {
 	margin-left: 5%;
 /*    margin-top: 2;
@@ -176,7 +176,8 @@ html body
 	border:2px solid #1E2736;
 	border-radius: 5px;
 	margin:3% auto;
-	width: 70%
+	width: 70%;
+	height:38%;
 }
 #mydiv .display .item
 {

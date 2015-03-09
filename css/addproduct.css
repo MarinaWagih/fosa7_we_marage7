@@ -23,9 +23,9 @@ html body
 {
 	margin-top: -27px;
 }
-#Header img:nth-child(7)
+#Header img:nth-child(9)
 {
-	margin-left: 10%;
+	margin-left: 1%;
 /*    margin-top: 2;
 */    margin-top: -32px;
 }
@@ -93,7 +93,7 @@ html body
 	font-size: -moz-xxx-large;	
 	font-family: serif;
 	/* background: linear-gradient(rgba(246, 243, 218, 1),rgba(237, 236, 188, .7) ); */
-	width: 250px;
+	width: 290px;
 	padding: 10px;
 	border-bottom: 2px solid;
 	margin-bottom: 20px;

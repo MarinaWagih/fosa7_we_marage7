@@ -16,20 +16,29 @@ $(document).ready(function(){
 
  for (var i = data.length - 1; i >= 0; i--)
   {
-  	$('.body').append('<table width="700px"  border="1"><tr><th>Order Data</th><th>User</th><th>Room</th><th>Ext</th><th>Status</th></tr><tr><td>'
+  	$('.body').append('<table class="table table-striped Mytable"><thead><tr>'+
+  		'<td>Order Data</td>'+
+  		'<td>User</td>'+
+  		'<td>Room</td><td>Ext</td><td>Status</td></tr></thead><tr><td>'
   		+data[i].timeStamp+'</td><td>'+data[i].UserId[0].name+'</td><td>'+data[i].RoomId[0].id+'</td><td>'+data[i].UserId[0].ext+
-  		'</td><td id="?'+data[i].id+'"><button class="status" >'+data[i].status+'</button></td></tr></table><div class="display" id="'+data[i].id+'"></div>');
+  		'</td><td id="?'+data[i].id+'"><button class="status" >'+data[i].status
+  		+'</button></td></tr></table><div class="display" id="display'+data[i].id+'"></div>');
 			
 
-	for (var j = data[i].Itemes.length - 1; j >= 0; j--) {
+	for (var j = data[i].Itemes.length - 1; j >= 0; j--)
+	{
 			
 					
-					$('#'+data[i].id).append("<center><div><img width='100px' height='100px' src='"+data[i].Itemes[j].ItemId[0].picture+"'></div></center>");							
+		$('#display'+data[i].id).append("<div class='item'>"+
+			"<img width='100px' height='100px' src='"+data[i].Itemes[j].ItemId[0].picture+"'><br>"+
+			"<span class='Productname'>"+data[i].Itemes[j].ItemId[0].name+"</span>&nbsp;&nbsp;"+
+			"<span class='ProductQuantity'>"+data[i].Itemes[j].quantity+"</span><br>"+
+			"</div>");							
 
 
-		};
+		}
 
-	};
+	}
 
 					$('.status').click(function(){
 						var id=$(this).closest('td').attr('id');

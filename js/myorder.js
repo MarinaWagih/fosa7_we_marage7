@@ -24,15 +24,17 @@ $(document).ready(function ()
 			for(var i=0;i<data.length ; i++)
 			{
 
-				$("#mydiv").append("<table border='1px' id='"+data[i].id+"'></table><div class='display' id='display"+data[i].id+"'></div>");
+				$("#mydiv").append("<table class='table table-striped Mytable' id='"+data[i].id+
+					"'></table><div class='display' id='display"+data[i].id+"'></div>");
 
-				$('#'+data[i].id).append("<tr>"
+				$('#'+data[i].id).append("<thead>"+"<tr>"
 											+"<td></td>"
 											+"<td>"+"Date"+"</td>"
 											+"<td>"+"Status"+"</td>"
 											+"<td>"+"Total"+"</td>"
 											+"<td>"+"Action"+"</td>"
-											+"</tr>");
+											+"</tr>"
+											+"</thead>");
 											
 				var x="";
 				var y="";
@@ -68,7 +70,10 @@ $(document).ready(function ()
 				for(var j=0;j<data[i].Items.length;j++)
 				{
 			
-					$('#display'+data[i].id).append("<div class='item'style='float: left;' ><span>"+data[i].Items[j].ItemId[0].name+"</span><br>"+"<span>"+data[i].Items[j].quantity+"</span><br>"+"<img src='"+data[i].Items[j].ItemId[0].picture+"'><br></div>");
+					$('#display'+data[i].id).append("<div class='item'>"+
+							"<img src='"+data[i].Items[j].ItemId[0].picture+"'><br>"
+						    +"<span  class='Productname'>"+data[i].Items[j].ItemId[0].name+"</span>&nbsp;&nbsp;"
+						    +"<span  class='ProductQuantity'>"+data[i].Items[j].quantity+"</span><br>"+"</div>");
 					
 				 }
 				
