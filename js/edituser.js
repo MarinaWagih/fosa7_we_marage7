@@ -212,11 +212,11 @@ $(document).ready(function ()
 
 
      }
-     // else{
+     else{
 
-     //    window.location.replace('../html/Error.php');
+        window.location.replace('../html/Error.php');
 
-     // } 
+     } 
 
      
 });

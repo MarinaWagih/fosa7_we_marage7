@@ -1,8 +1,9 @@
 <?php
 	include_once('../Modeles/User.php');
         
-  if(!empty($_SESSION['UserId'])){
-        	if(isset($_POST))
+  // if(session_status() !== PHP_SESSION_ACTIVE){
+  
+          if(isset($_POST))
         	{
         		$currUser = new User();
                         
@@ -37,8 +38,8 @@
 
 
         }
-      }else{
-        header('Location:../html/home.php');
-      }
+      // }else{
+      //   header('Location:../html/home.php');
+      // }
 
 ?>
