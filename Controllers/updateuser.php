@@ -6,7 +6,7 @@ if(isset($_POST)){
 
 	$conn=new User();
 	$targetcolumns=array('name' ,'email','password','ext');
-	$newvalues = array($_POST['Name'],$_POST['E-mail'],$_POST['password'],$_POST['Ext']);
+	$newvalues = array($_POST['Name'],$_POST['E-mail'],md5($_POST['password']),$_POST['Ext']);
 	
 	$result=$conn->updateUser($targetcolumns,$newvalues,'id',$_POST['userid']);
 	echo $result;

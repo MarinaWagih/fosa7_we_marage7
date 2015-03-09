@@ -1,8 +1,8 @@
 $(document).ready(function () 
 {
-	
-	   	
-	function connect()
+	if($("#UserType").val()=="user"){
+
+		function connect()
 	{
 		var fr = $("#from").val();
 		var to = $("#to").val();
@@ -92,6 +92,19 @@ $(document).ready(function ()
 	$("#to").change(connect);
 	$("#usr").change(connect);
 
+
+
+	}else{
+
+		
+		 window.location.replace('../html/Error.php');
+
+
+
+	}
+	
+	   	
+	
 
 
 
