@@ -1,13 +1,25 @@
 
 <html>
 <head>
-	<title>Add Product</title>
 
-	<script type="text/javascript" src="../js/jquery.js"></script>
-    
+	<link rel="stylesheet" href="../css/addproduct.css">
+    <link rel="stylesheet" href="../css/css1/bootstrap.min.css">
+	<title>Add Product</title>
+	<script type="text/javascript" src="../js/jquery.js"></script>   
     <script type="text/javascript" src="../js/addproduct.js"></script>
 </head>
 <body>
+<div id="transparent">
+    <div id="Header">
+		<img src="../img/images (16).png">
+		<p>Admin Name</p>
+		<a href="home.php">Home</a>
+		<a  href="products.php">Products</a>
+		<a href="orders.php">Manual Order</a>
+		<a href="checks.php">Checks</a>
+	    <img src="../img/finallogosmall.png">		
+	</div>	
+
 <?php session_start();?>
 
 <div id="Header">
@@ -23,57 +35,24 @@
 		<a href="out.php" >Log out</a>
 	    <img src="../img/finallogosmall.png">
 	</div>
-
 <h1>Add Product</h1>
-<form class="add" method="POST" action="../Controllers/submitproduct.php" enctype="multipart/form-data" 	accept-charset="utf-8">
-<center>
-	<table width="500px"  height="300px">
-		<tr>
-			<td>
-				<label>Product:</label>	
-			</td>
-			<td>
-				<input type="text" id='name' name="name"></input>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label>Price:</label>	
-			</td>
-			<td>
-				<input type="text" id='price' name="price"></input>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label>Category:</label>	
-			</td>
-			<td>
-				<select id='category' name='category'></select>&nbsp;&nbsp;&nbsp;&nbsp;<a href="addcategory.php">Add Category</a>
-			</td>
-		</tr>	
-		<tr>
-			<td>
-				<label>Product Picture:</label>
-			</td>
-			<td>
-				<input type="file" id='pic' name="pic"></input>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<input type="submit" id='submit' name="submit"></input>
-			<td>
-				<input type="reset"></input>
-			</td>
-		</tr>
-	</table>
-</center>
+<form class="add loginform cf" method="POST" action="../Controllers/submitproduct.php" enctype="multipart/form-data" 	accept-charset="utf-8">
+	<label>Product :&nbsp;&nbsp;</label>	
+	<input type="text" id='name' name="name"></input><br>
+	<label>Price :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>	
+	<input type="text" id='price' name="price"></input>
+	<span>EGP</span><br>
+	<label>Category :</label>	
+	<select id='category' name='category'></select>
+	<a href="addcategory.php">Add Category</a>
+	<label id="piclabel">Product Picture:</label>
+	<input type="file" id='pic' name="pic"></input>
+	<input type="submit" id='submit' name="submit" value="Add">
+	<input type="reset">
 </form>
 
 <input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId']?>">
 <input type="hidden" id="UserType" value="<?php echo $_SESSION['Type']?>">
-<input type="hidden" id="user" value="<?php echo $_SESSION['username'];?>">
-<input type="hidden" id="picture" value="<?php echo $_SESSION['picture'];?>">
+
 </body>
 </html>
