@@ -34,7 +34,7 @@ html body
 {
 	margin-top: -27px;
 }
-#Header img:nth-child(5)
+#Header img:nth-child(9)
 {
 	margin-left: 5%;
 /*    margin-top: 2;
@@ -61,7 +61,7 @@ html body
 	color:rgb(43, 54, 71);
 	margin-bottom: 0px;
 	margin-top: 10px;
-	margin-right: 10%;
+	margin-right: 4%;
 
 }
 #Header a:nth-child(1)
@@ -94,13 +94,6 @@ html body
 	background: linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
 	background: -moz-linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
 }
-#content select
-{
-	width: 152px;
-	height: 30px;
-	border-radius: 5px;
-	font-size: large;
-}
 #content h1
 {
 	color: rgb(43, 54, 71);
@@ -108,18 +101,11 @@ html body
 	font-size: -moz-xxx-large;	
 	font-family: serif;
 	/* background: linear-gradient(rgba(246, 243, 218, 1),rgba(237, 236, 188, .7) ); */
-	width: 830px;
+	width: 880px;
 	padding: 20px;
 	border-bottom: 2px solid;
 	margin-top: 0;
-}
-#content label
-{
-	font-size: 18;
-    color: rgb(43, 54, 71);
-    margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 10px;
+	text-align: center;
 }
 #content .Mytable
 {
@@ -146,46 +132,4 @@ html body
 	border-radius: 5px;
 	border: 1px solid;
 	text-align: center;
-}
-#last-table td:last-child img
-{
-    padding-top: 10px;
-}
-#last-table td:last-child span
-{
-	color: #2F5168;
-	font-size: 17px;
-	margin-right: 10px;
-	margin-left: 10px;
-}
-#last-table td:last-child
-{
-	padding-bottom: 10;
-}
-#content #second-table
-{
-	width: 70%;
-	margin-top: 0px;
-}
-#content #last-table
-{
-	width: 60%;
-}
-#mydiv .display
-{
-	border:2px solid #1E2736;
-	border-radius: 5px;
-	margin:3% auto;
-	width: 70%
-}
-#mydiv .display .item
-{
-	float: left;
-	margin: 2% 2%;
-}
-.Productname, .ProductQuantity
-{
-	font-size: 18px;
-	font-family: serif;
-	color: #1E2736;
 }

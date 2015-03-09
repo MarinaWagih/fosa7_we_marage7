@@ -34,7 +34,7 @@ html body
 {
 	margin-top: -27px;
 }
-#Header img:nth-child(5)
+#Header img:nth-child(8)
 {
 	margin-left: 5%;
 /*    margin-top: 2;
@@ -94,14 +94,7 @@ html body
 	background: linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
 	background: -moz-linear-gradient(rgba(79, 92, 115, .8),rgba(79, 92, 115, .8));
 }
-#content select
-{
-	width: 152px;
-	height: 30px;
-	border-radius: 5px;
-	font-size: large;
-}
-#content h1
+h1
 {
 	color: rgb(43, 54, 71);
 	font-size: -webkit-xxx-large;
@@ -109,76 +102,84 @@ html body
 	font-family: serif;
 	/* background: linear-gradient(rgba(246, 243, 218, 1),rgba(237, 236, 188, .7) ); */
 	width: 830px;
-	padding: 20px;
+	padding: 25px;
 	border-bottom: 2px solid;
-	margin-top: 0;
+	margin-bottom: 30px;
 }
-#content label
-{
-	font-size: 18;
-    color: rgb(43, 54, 71);
-    margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 10px;
-}
-#content .Mytable
+#content .MyTable
 {
 	padding: 1px;
 /*	border-style:hidden;
 */	font-size: 18px;
 	font-family: sans-serif;
 	width: 80%;
-	height: 30%;
+	height: 15%;
 	border: 2px solid rgb(43, 54, 71);
 	border-radius: 5px;
-	margin-top: 2%;
 	margin-bottom: 0px;
 }
-#content .Mytable thead{
+#content .MyTable thead{
 	text-align: center;
 	font-size: x-large;
 	background-color: rgb(43, 54, 71);
     color: rgb(243, 241, 214);
     border-radius: 10px;
 }
-#content .Mytable td
+#content .MyTable td
 {
 	border-radius: 5px;
 	border: 1px solid;
 	text-align: center;
 }
-#last-table td:last-child img
+#content p
+{
+	color: rgb(43, 54, 71);
+	font-size: 25px;	
+	font-family: serif;
+	width: 830px;
+	padding: 5px;
+}
+.last-table
+{
+	margin-top: 5px;
+}
+.last-table td:last-child img
 {
     padding-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
-#last-table td:last-child span
+.last-table td:last-child span
 {
 	color: #2F5168;
 	font-size: 17px;
-	margin-right: 10px;
-	margin-left: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
 }
-#last-table td:last-child
+.last-table td:last-child
 {
 	padding-bottom: 10;
 }
-#content #second-table
+.last-table td:last-child h3
 {
-	width: 70%;
-	margin-top: 0px;
+	float: left;
+	color: #2F5168;
+	font-size: 20px;
+	margin-right: 45px;
+	margin-left: 90px;
+	border: 2px solid #2F5168;
+	border-radius: 5px;
+	padding: 5px;
 }
-#content #last-table
-{
-	width: 60%;
-}
-#mydiv .display
+.display
 {
 	border:2px solid #1E2736;
 	border-radius: 5px;
 	margin:3% auto;
-	width: 70%
+	width: 70%;
+	height: 36%;
 }
-#mydiv .display .item
+.display .item
 {
 	float: left;
 	margin: 2% 2%;

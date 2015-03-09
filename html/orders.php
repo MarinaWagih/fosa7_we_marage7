@@ -35,19 +35,19 @@
   			</select>
 
   			<br>
-            <span id="Total"></span>
+            <span id="Total">Total=0</span>
             <br>
             <input type="button" id ="Confirm" value="Confirm">
   		</div>
   	</div>
 <div id="rightdiv">  
-	<div id="latestOrder"></div>
-
-	<div id="AllItems"></div>
+	<div id="latestOrder"><label>last order</label></div>
+<p>_________________________________</p>
+	<div id="AllItems"><label>all items</label></div>
 </div>
-  
+
   <input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId'];?>">
-  <input type="hidden" id="UserType " value="<?php echo $_SESSION['Type'];?>">
+  <input type="hidden" id="UserType" value="<?php echo $_SESSION['Type'];?>">
   <input type="hidden" id="user" value="<?php echo $_SESSION['username'];?>">
   <input type="hidden" id="picture" value="<?php echo $_SESSION['picture'];?>">
   

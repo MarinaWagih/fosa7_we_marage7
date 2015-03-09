@@ -42,12 +42,6 @@
   		
   		<label>Date to :</label>
 
-	 
-
-
-  		<input type="date" id="from" name="from">
-  		
-
   		<input type="date" id="to" name="to">
   		
   		<select  name="user" id="usr" required>

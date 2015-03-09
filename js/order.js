@@ -1,6 +1,6 @@
 $(document).ready(function () {
   
-  alert($("#UserType").val());
+  
   var OrderItem=[];
   var Quantity=[];
   var Price=[];
@@ -59,10 +59,10 @@ $(document).ready(function () {
                        
                                          
             });
-       }
-       // else{
-       //    window.location.replace('../html/index.php');
-       // }
+        }
+        else{
+           window.location.replace('../html/index.php');
+        }
       
         //**********************************************************************************
         //*****************************AllItems*********************************************

@@ -161,10 +161,15 @@ label {
     -webkit-transition:all 2s ease-in-out;
 	transition:all 2s ease-in-out;
 }
-#Header img
+#Header img:nth-child(1)
 {
-	margin-left: 37%;
-    margin-top: 2;
+	margin-top: -27px;
+}
+#Header img:nth-child(9)
+{
+	margin-left: 1%;
+/*    margin-top: 2;
+*/    margin-top: -32px;
 }
 #Header
 {
@@ -175,6 +180,7 @@ label {
 	margin: -8px;
     padding-left: 10;
     padding-top: 1px;
+    border-bottom: 11px solid #354053;
 }
 #Header p
 {
