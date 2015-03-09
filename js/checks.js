@@ -1,7 +1,6 @@
 $(document).ready(function () 
 {
-	alert($("#UserType").val());
-   	
+	
    	if($("#UserType").val()=="admin"){
    		$.post("../Controllers/returnallusers.php",
    	

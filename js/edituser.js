@@ -1,10 +1,6 @@
 $(document).ready(function () 
 {  
 
-  alert($("#UserType").val());
-	 
-
-
    if($("#UserType").val()=="admin"){
 
                 // ////get user id from url ///////////

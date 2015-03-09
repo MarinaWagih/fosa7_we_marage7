@@ -26,7 +26,9 @@ $(document).ready(function ()
 
 				$("#mydiv").append("<table border='1px' id='"+data[i].id+"'></table><div class='display' id='display"+data[i].id+"'></div>");
 
-				$('#'+data[i].id).append("<tr>"+"<td></td>"+"<td>"+"Date"+"</td>"
+				$('#'+data[i].id).append("<tr>"
+											+"<td></td>"
+											+"<td>"+"Date"+"</td>"
 											+"<td>"+"Status"+"</td>"
 											+"<td>"+"Total"+"</td>"
 											+"<td>"+"Action"+"</td>"
