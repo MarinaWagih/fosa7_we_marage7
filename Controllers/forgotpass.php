@@ -7,20 +7,23 @@
         $result = $currUser->selectOneUser("*", "email",$_POST["email"]);
 
         if(!empty($result)){
-        	// the message
-			$msg = 'Dear'.$result[0]['name'].' , click on the following link to change your password';
-			// send email
-			mail($result[0]['email'],"change password",$msg);
+        		
+        	function rand_Pass( $length ) {
 
+			    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			    
+			    return substr(str_shuffle($chars),0,$length);
+
+			}
+
+			echo rand_Pass(8);
+
+			$msg = 'Dear'.$result[0]['name'].' , click on the following link to change your password';
 
         }else{
 
         	echo "string";
         }
-        
-
-
-
 
 	}
 
