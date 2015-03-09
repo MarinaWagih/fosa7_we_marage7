@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
 
 require_once('../Modeles/Order.php');
 
@@ -24,12 +26,13 @@ if(isset($_GET)){
 		break;
 		}
 
+echo $_GET['orderid'].':'.$_GET['status'];
 }
 
 
 
 
-header('Location:../html/home.php');
+// header('Location:../html/home.php');
 
 
 ?>

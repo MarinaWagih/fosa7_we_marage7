@@ -2,11 +2,12 @@
 <head>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/myorder.js"></script>
+	<script type="text/javascript" src="../js/websocketinmyorder.js"></script>
 	
 	<script src="../js-webshim/minified/polyfiller.js"></script>
     <link rel="stylesheet" href="../css/checks.css">
     <link rel="stylesheet" href="../css/css1/bootstrap.min.css">    
-<title>Checks</title>
+<title>Orders</title>
 	
 <script>
   webshims.setOptions('waitReady', false);
@@ -29,7 +30,7 @@
 	    <img src="../img/finallogosmall.png">
 	</div>
 <div id="content" class="wrapper">
-<center><h1>Checks</h1>	
+<center><h1>Orders</h1>	
 	 
   		<label>Date From :</label>
   		<input type="date" id="from" name="from">

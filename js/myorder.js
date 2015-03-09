@@ -1,7 +1,7 @@
 $(document).ready(function () 
 {
 	
-	   	
+  	
 	function connect()
 	{
 		var fr = $("#from").val();
@@ -39,7 +39,7 @@ $(document).ready(function ()
 				}
 				$('#'+data[i].id).append("<tr>"+"<td id='show-"+data[i].id+"'>+</td>"
 										+"<td>"+data[i].timeStamp+"</td>"
-										+"<td>"+data[i].status+"</td>"
+										+"<td id='status-"+data[i].id+"'>"+data[i].status+"</td>"
 										+"<td>"+data[i].totalBill+"</td>"
 										+"<td>"+x+"</td>"
 										+"</tr>");
@@ -80,11 +80,12 @@ $(document).ready(function ()
 													});				
 				$("#mydiv").append("<br/><br/>");
 			}
-		}
-		);
-
+		});
+			
+            
+   
 	}
-
+ 	
 
 
 
