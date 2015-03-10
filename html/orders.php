@@ -41,9 +41,9 @@
   		</div>
   	</div>
 <div id="rightdiv">  
-	<div id="latestOrder"><label>last order</label></div>
-<p>_________________________________</p>
-	<div id="AllItems"><label>all items</label></div>
+	<div id="latestOrder"><label>Last Order</label><br></div>
+  <div class="clear"></div>
+	<div id="AllItems"><label>All Items</label><br></div>
 </div>
 
   <input type="hidden" id="UserId" value="<?php echo $_SESSION['UserId'];?>">

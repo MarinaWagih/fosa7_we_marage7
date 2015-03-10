@@ -50,10 +50,10 @@ $(document).ready(function () {
                         for (var i = 0; i < obj[0].Itemes.length; i++) 
                         {
                              var html="<div class='itemOrder' id='"+obj[0].Itemes[i].ItemId[0].id+"'>";
-                            html+="<img src='"+obj[0].Itemes[i].ItemId[0].picture+"'><br>";
-                            html+="<span class='itemname'>"+obj[0].Itemes[i].ItemId[0].name+"</span>";
-                            html+="&nbsp;&nbsp; <span class='price'>"+obj[0].Itemes[i].ItemId[0].price+"</span>";
-                            html+="</div>&nbsp;&nbsp;&nbsp;";
+                            html+="<img class='item' src='"+obj[0].Itemes[i].ItemId[0].picture+"'><br>";
+                            html+="<span class='itemname Productname'>"+obj[0].Itemes[i].ItemId[0].name+"</span>&nbsp;&nbsp;";
+                            html+="<span class='price ProductQuantity'>"+obj[0].Itemes[i].ItemId[0].price+"</span><br>";
+                            html+="</div>";
                             $('#latestOrder').append (html);
                         };
                        
@@ -167,7 +167,7 @@ $(document).ready(function () {
                                       {
                                       
                                        
-                                          alert(data);
+                                         window.location.replace('myorder.php');
                                         
                                        
                                        });

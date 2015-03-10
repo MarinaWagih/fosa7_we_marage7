@@ -177,3 +177,24 @@ select
 	width: 236px;
 	float: right;
 }
+#latestOrder .itemorder
+{
+	float: left;
+	margin: 2% 2%;
+}
+#AllItems .item
+{
+	float: left;
+	margin: 2% 2%;
+}
+.Productname, .ProductQuantity
+{
+	font-size: 18px;
+	font-family: serif;
+	color: #1E2736;
+}
+.clear
+{
+	
+		clear: both;
+}
