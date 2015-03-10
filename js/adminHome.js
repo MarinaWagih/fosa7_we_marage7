@@ -1,7 +1,10 @@
 $(document).ready(function(){
-
+	
+	
 	if($("#UserType").val()=="admin"){
-
+	
+		var wskt = new WebSocket('ws://localhost:8080');
+		
 		$.ajax({
 
 		url:'../Controllers/listordersbyadmin.php',
@@ -38,7 +41,21 @@ $(document).ready(function(){
 
 	}
 
+<<<<<<< HEAD
+	};
+					x.onmessage = function(e)
+					{
+						var x = e.split(':');
+		
+						if(x[0]=='cancel')
+						{
+							console.log(x[1]);
+							console.log(x[2]);
+						} 
+					}
+=======
 	}
+>>>>>>> 1935e62b95ea98d97f2a85d2c999e00ea362d9e2
 
 					$('.status').click(function(){
 						var id=$(this).closest('td').attr('id');

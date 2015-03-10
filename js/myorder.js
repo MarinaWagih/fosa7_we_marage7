@@ -1,5 +1,7 @@
 $(document).ready(function () 
 {
+	var wskt = new WebSocket('ws://localhost:8080');
+	
 	if($("#UserType").val()=="user"){
 
 	function connect()
@@ -85,6 +87,7 @@ $(document).ready(function ()
 													
 														var id=this.id.split("-");
 														$('#display'+id[1]).slideToggle( "slow" );
+														sendmessage($("#UserId").val(),data[i].id);
 													});				
 				$("#mydiv").append("<br/><br/>");
 			}
@@ -115,8 +118,17 @@ $(document).ready(function ()
 	   	
 	
 
+	wskt.onopen = function(e){
+		console.log("web socket connected");
 
+	}
 
+   	function sendmessage(uid,oid)
+   	{
+		x.send("cancel:"+uid+":"+oid+);
+	}
+   	
+   	
    	
 });
 
